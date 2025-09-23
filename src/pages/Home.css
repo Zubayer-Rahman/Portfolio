@@ -1,0 +1,31 @@
+.about, .skills, .looper{
+    color: #dfdfdf;
+    background-color: #101010;
+    padding: 50px 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+.info h2, .skills h2, .looper h2{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #dfdfdf;
+    background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.skill-set, section{
+    width: 100%;
+}

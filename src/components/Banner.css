@@ -1,0 +1,74 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.banner-container {
+    width: 100%;
+    height: 600px; /* Set a fixed height or a height relative to the viewport (e.g., 80vh) */
+    position: relative; /* This is crucial for positioning children absolutely */
+    overflow: hidden; /* Hides any particles that move outside the banner's boundaries */
+    background-color: #101010;
+    color: #dfdfdf; /* Ensures text is visible against the dark background */
+}
+
+/* Particles Background */
+.particles-background {
+    position: absolute; /* Positions the particles relative to the banner-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sets a lower z-index to place it behind the content */
+}
+
+/* Banner Content */
+.banner-content {
+    position: relative; /* Brings the content to the foreground */
+    z-index: 2; /* Ensures content is on top of the particles */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-content h1 {
+    font-size: 3em;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.banner-content button {
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #dfdfdf;
+    border: 2px solid #dfdfdf;
+    color: #000000;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.banner-content button:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.gradient-text  {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    background: transparent;
+}
+
