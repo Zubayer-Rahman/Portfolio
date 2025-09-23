@@ -191,6 +191,7 @@ const ProfileCardComponent = ({
     const deviceOrientationHandler = handleDeviceOrientation;
 
     const handleClick = () => {
+      // eslint-disable-next-line no-restricted-globals
       if (!enableMobileTilt || location.protocol !== 'https:') return;
       if (typeof window.DeviceMotionEvent.requestPermission === 'function') {
         window.DeviceMotionEvent.requestPermission()

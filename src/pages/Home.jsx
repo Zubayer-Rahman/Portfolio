@@ -7,12 +7,32 @@ import ScrambledText from '../components/ScrambledText.jsx'
 import ScrollVelocity from '../components/Scroller.jsx'
 import LogoLoop from '../components/LogoLoop';
 import avatarImage from '../asset/zubayer.png'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql, SiGit, SiSass } from 'react-icons/si';
 
 const Home = () => {
-  const imageLogos = [
-    { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-    { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-    { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+  // const imageLogos = [
+  //   { src: "../asset/html.png", alt: "HTML"},
+  //   { src: "../asset/css.png", alt: "css"},
+  //   { src: "../asset/js.png", alt: "js"},
+  //   { src: "../asset/ts.png", alt: "ts"},
+  //   { src: "../asset/nodejs.png", alt: "nodejs"},
+  //   { src: "../asset/git.png", alt: "git"},
+  //   { src: "../asset/php.png", alt: "php"},
+  //   { src: "../asset/sql.png", alt: "sql"},
+  // ];
+
+
+  const techLogos = [
+    { node: <SiReact />, title: "React"},
+    { node: <SiNextdotjs />, title: "Next.js"},
+    { node: <SiTypescript />, title: "TypeScript"},
+    { node: <SiTailwindcss />, title: "Tailwind CSS"},
+    { node: <SiNodedotjs />, title: "Nodejs" },
+    { node: <SiPhp />, title: "php" },
+    { node: <SiMysql />, title: "Mysql" },
+    { node: <SiGit />, title: "GIT" },
+    { node: <SiSass />, title: "SCSS" },
+
   ];
   return (
     <>
@@ -66,15 +86,13 @@ const Home = () => {
       <div className="looper">
         <h2>Skill Set</h2>
         <LogoLoop
-          logos={imageLogos}
+          logos={techLogos}
           speed={120}
           direction="left"
           logoHeight={48}
           gap={40}
           pauseOnHover
           scaleOnHover
-          fadeOut
-          fadeOutColor="#ffffff"
           ariaLabel="Technology partners"
         />
       </div>

@@ -28,6 +28,7 @@
 .logoloop__list {
   display: flex;
   align-items: center;
+  padding: 0;
 }
 
 .logoloop__item {
@@ -41,6 +42,13 @@
   margin-right: var(--logoloop-gap);
 }
 
+[role=img]{
+  color: grey;
+}
+
+.logoloop__item::marker{
+  content: '';
+}
 .logoloop__node {
   display: inline-flex;
   align-items: center;
