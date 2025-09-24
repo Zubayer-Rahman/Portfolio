@@ -10,7 +10,7 @@
     text-align: center;
     gap: 1rem;
 }
-.info h2, .skills h2, .looper h2{
+.info h2, .skills h2, .looper h2, .timeline h2{
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: bold;

@@ -22,12 +22,17 @@ const DEFAULT_EVENTS = [
     subtitle: "Organization Name",
     description: "Information about this key event in the timeline.",
   },
+  {
+    year: "2020",
+    title: "Key Event",
+    subtitle: "Organization Name",
+    description: "Information about this key event in the timeline.",
+  },
 ];
 
 const ScrollTimeline = ({
   events = DEFAULT_EVENTS,
-  title = "Timeline",
-  subtitle = "Scroll to explore the journey",
+  title = "A Short Timeline",
   animationOrder = "sequential",
   cardAlignment = "alternating",
   progressIndicator = true,
@@ -122,7 +127,6 @@ const ScrollTimeline = ({
     <div ref={scrollRef} className="timeline-container">
       <div className="timeline-header">
         <h2>{title}</h2>
-        <p>{subtitle}</p>
       </div>
 
       <div className="timeline-wrapper">
