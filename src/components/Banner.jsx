@@ -23,7 +23,7 @@ const Banner = () => {
         <div className="banner-content">
             <h1>
               <TextType 
-                text={["Hello, I'm Zubayer Rahman", "Welcome to My Portfolio", "Explore My Work"]}
+                text={["HELLO, I AM ZUBAYER RAHMAN", "WELCOME TO MY PORTFOLIO", "EXPLORE MY WORK"]}
                 typingSpeed={75}
                 pauseDuration={1500}
                 showCursor={true}

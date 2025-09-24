@@ -25,3 +25,10 @@
 .blink {
   animation: blinkAnimation 1s steps(2, start) infinite;
 }
+
+@media (max-width: 768px){
+  .text-type__content{
+    font-size: 40px;
+    width: 100%;
+  }
+}

@@ -8,7 +8,7 @@ import ScrollVelocity from '../components/Scroller.jsx'
 import LogoLoop from '../components/LogoLoop';
 import avatarImage from '../asset/zubayer.png'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql, SiGit, SiSass } from 'react-icons/si';
-import ScrollStack, { ScrollStackItem }  from '../components/ScrollStack'
+import ScrollTimeline from '../components/ScrollTimeline.jsx'
 
 const Home = () => {
   const techLogos = [
@@ -84,6 +84,11 @@ const Home = () => {
           scaleOnHover
           ariaLabel="Technology partners"
         />
+      </div>
+
+      <div className="timeline">
+        <h2>My Journey Through the Years</h2>
+        <ScrollTimeline />
       </div>
 
 

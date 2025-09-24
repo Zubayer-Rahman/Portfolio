@@ -1,10 +1,11 @@
 .navbar {
     display: flex;
     align-items: center;
-    background: #dfdfdf;
+    background: transparent;
+    border: 1px solid #dfdfdf;
     padding: 1.2rem;
     z-index: 100;
-    border-radius: 20px;
+    border-radius: 30px;
     width: 550px;
     justify-self: center;
     justify-content: center;
@@ -19,7 +20,7 @@
     padding: 0;
 }
 .links {
-    color: #000000;
+    color: #dfdfdf;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -36,7 +37,7 @@
   height: 2px;
   bottom: -5px; /* Position it below the text */
   left: 0;
-  background-color: #555555;
+  background-color: #dfdfdf;
   transform-origin: bottom left; /* Set the animation origin to the left */
   transition: transform 0.3s ease; /* Animate the transform property */
 }
@@ -48,5 +49,11 @@
 
 /* Optional: change the text color on hover */
 .links:hover {
-  color: #000000;
+  color: #bcbcbc;
+}
+
+@media (max-width: 768px){
+  .navbar{
+    display:none;
+  }
 }
