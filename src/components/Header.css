@@ -1,59 +1,94 @@
+
+/* Base navbar styles */
 .navbar {
-    display: flex;
-    align-items: center;
-    background: transparent;
-    border: 1px solid #dfdfdf;
-    padding: 1.2rem;
-    z-index: 100;
-    border-radius: 30px;
-    width: 550px;
-    justify-self: center;
-    justify-content: center;
-    margin-top: 30px;
-    position: absolute;
+  position: sticky;             /* ✅ Makes it sticky */
+  top: 20px;                    /* ✅ Keeps a little breathing room from the top */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.4); /* ✅ Semi-transparent background for a sleek glass effect */
+  backdrop-filter: blur(12px);  /* ✅ Unique frosted glass look */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 2rem;
+  z-index: 1000;
+  border-radius: 30px;
+  width: fit-content;
+  max-width: 90%;
+  margin: 0 auto;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
+
+/* Subtle hover "lift" */
+.navbar:hover {
+  transform: translateY(-2px);
+}
+
+/* Navigation links */
 .navLinks {
-    display: flex;
-    list-style: none;
-    gap: 5rem;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
 }
+
+/* Individual link styles */
 .links {
-    color: #dfdfdf;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.2s;
-    font-family: "Montserrat", sans-serif;
-    position: relative;
+  color: #dfdfdf;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
 }
-/* Pseudo-element for the underline */
+
+/* Underline animation */
 .links::after {
   content: '';
   position: absolute;
   width: 100%;
-  transform: scaleX(0); /* Initially hide the underline */
+  transform: scaleX(0);
   height: 2px;
-  bottom: -5px; /* Position it below the text */
+  bottom: -5px;
   left: 0;
   background-color: #dfdfdf;
-  transform-origin: bottom left; /* Set the animation origin to the left */
-  transition: transform 0.3s ease; /* Animate the transform property */
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect: grow the underline */
 .links:hover::after {
   transform: scaleX(1);
 }
 
-/* Optional: change the text color on hover */
 .links:hover {
   color: #bcbcbc;
 }
 
-@media (max-width: 768px){
-  .navbar{
-    display:none;
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    border-radius: 0;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .navLinks {
+    gap: 1.5rem;
+  }
+
+  .links {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 1rem;
+  }
+  .links {
+    font-size: 0.8rem;
   }
 }

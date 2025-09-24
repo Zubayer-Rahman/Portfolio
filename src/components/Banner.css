@@ -23,7 +23,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Sets a lower z-index to place it behind the content */
+    z-index: 3; /* Sets a lower z-index to place it behind the content */
 }
 
 /* Banner Content */

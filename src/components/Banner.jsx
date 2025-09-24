@@ -10,9 +10,9 @@ const Banner = () => {
         <div className="particles-background">
             <Particles
                 particleColors={['#ffffffff', '#ffffffff']}
-                particleCount={200}
+                particleCount={300}
                 particleSpread={5}
-                speed={0.1}
+                speed={0.2}
                 particleBaseSize={100}
                 moveParticlesOnHover={true}
                 alphaParticles={false}

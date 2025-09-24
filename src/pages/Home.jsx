@@ -91,6 +91,10 @@ const Home = () => {
         <ScrollTimeline />
       </div>
 
+      <div className="projectshowcase">
+        
+      </div>
+
 
 
       {/* <Footer /> */}
