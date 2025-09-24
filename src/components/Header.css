@@ -1,4 +1,6 @@
-
+body{
+  position: relative;
+}
 /* Base navbar styles */
 .navbar {
   position: sticky;             /* ✅ Makes it sticky */

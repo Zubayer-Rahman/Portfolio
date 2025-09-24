@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import Header from '../components/Header.jsx'
+// import Header from '../components/Header.jsx'
 import Banner from '../components/Banner.jsx'
 import ProfileCard from '../components/ProfileCard.jsx'
 import ScrambledText from '../components/ScrambledText.jsx'
@@ -25,7 +25,15 @@ const Home = () => {
   ];
   return (
     <>
-      <Header />
+      <nav className="navbar">
+          <ul className="navLinks">
+              <li><a href="/home" className='links'>Home</a></li>
+              <li><a href="/about" className='links'>About</a></li>
+              <li><a href="/contactus" className='links'>Contact Us</a></li>
+              <li><a href="/blog" className='links'>Blog</a></li>
+          </ul>
+      </nav>
+      
       <Banner />
 
       <div className="about" id='about'>

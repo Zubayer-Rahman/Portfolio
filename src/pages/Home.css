@@ -10,7 +10,7 @@
     text-align: center;
     gap: 1rem;
 }
-.info h2, .skills h2, .looper h2, .timeline h2{
+.info h2, .skills h2, .looper h2, .timeline h2:first-child{
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -28,4 +28,90 @@
 }
 .skill-set, section{
     width: 100%;
+}
+
+.navbar {
+  position: absolute;             
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  background: rgba(20, 20, 20, 0.3);
+  backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 2rem;
+  z-index: 1000;
+  border-radius: 30px;
+  width: 30%;
+  margin: 0 auto;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.links {
+  color: #dfdfdf;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.links::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #dfdfdf;
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+.links:hover::after {
+  transform: scaleX(1);
+}
+
+.links:hover {
+  color: #bcbcbc;
+}
+
+@media (max-width: 768px) {
+  .info h2, .skills h2, .looper h2, .timeline h2:first-child{
+    font-size: 2.5rem;
+  }
+  
+    .navbar {
+    width: 60%;
+    padding: 1rem 1.5rem;
+    justify-self: center;
+  }
+
+  .navLinks {
+    gap: 1.5rem;
+  }
+
+  .links {
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 1rem;
+  }
+  .links {
+    font-size: 0.76rem;
+  }
 }

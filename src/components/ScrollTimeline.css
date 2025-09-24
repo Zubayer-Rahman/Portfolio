@@ -174,3 +174,11 @@
   height: 16px;
   margin-right: 0.5rem;
 }
+
+
+@media (width: 768px) {
+  .timeline-header h2{
+    font-size: 1.5rem;
+  }
+
+}
