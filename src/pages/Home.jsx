@@ -8,20 +8,9 @@ import ScrollVelocity from '../components/Scroller.jsx'
 import LogoLoop from '../components/LogoLoop';
 import avatarImage from '../asset/zubayer.png'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql, SiGit, SiSass } from 'react-icons/si';
+import ScrollStack, { ScrollStackItem }  from '../components/ScrollStack'
 
 const Home = () => {
-  // const imageLogos = [
-  //   { src: "../asset/html.png", alt: "HTML"},
-  //   { src: "../asset/css.png", alt: "css"},
-  //   { src: "../asset/js.png", alt: "js"},
-  //   { src: "../asset/ts.png", alt: "ts"},
-  //   { src: "../asset/nodejs.png", alt: "nodejs"},
-  //   { src: "../asset/git.png", alt: "git"},
-  //   { src: "../asset/php.png", alt: "php"},
-  //   { src: "../asset/sql.png", alt: "sql"},
-  // ];
-
-
   const techLogos = [
     { node: <SiReact />, title: "React"},
     { node: <SiNextdotjs />, title: "Next.js"},
@@ -39,7 +28,7 @@ const Home = () => {
       <Header />
       <Banner />
 
-      <div className="about">
+      <div className="about" id='about'>
         <div className="info">
           <h2>More about me!!</h2>
         </div>
@@ -96,6 +85,7 @@ const Home = () => {
           ariaLabel="Technology partners"
         />
       </div>
+
 
 
       {/* <Footer /> */}
