@@ -1,6 +1,6 @@
 import React from 'react'
 import './Banner.css'
-import Particles from './Particles.jsx';
+import Galaxy from './Galaxy';
 import TextType from './TextType.jsx';
 import GradientText from './GradientText.jsx';
 
@@ -8,15 +8,13 @@ const Banner = () => {
   return (
     <div className="banner-container">
         <div className="particles-background">
-            <Particles
-                particleColors={['#ffffffff', '#ffffffff']}
-                particleCount={300}
-                particleSpread={5}
-                speed={0.2}
-                particleBaseSize={100}
-                moveParticlesOnHover={true}
-                alphaParticles={false}
-                disableRotation={false}
+            <Galaxy 
+              mouseRepulsion={true}
+              mouseInteraction={true}
+              density={1.5}
+              glowIntensity={0.5}
+              saturation={0.8}
+              hueShift={240}
             />
         </div>
         

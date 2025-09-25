@@ -29,7 +29,7 @@
 /* Banner Content */
 .banner-content {
     position: relative; /* Brings the content to the foreground */
-    z-index: 2; /* Ensures content is on top of the particles */
+    z-index: 3; /* Ensures content is on top of the particles */
     height: 100%;
     display: flex;
     flex-direction: column;

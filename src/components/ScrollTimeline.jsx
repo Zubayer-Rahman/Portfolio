@@ -4,29 +4,35 @@ import "./ScrollTimeline.css";
 
 const DEFAULT_EVENTS = [
   {
-    year: "2023",
-    title: "Major Achievement",
-    subtitle: "Organization Name",
+    year: "March 2025 - Present",
+    title: "Junior Software Engineer",
+    subtitle: "Dotlines Bangladesh",
     description:
-      "Description of the achievement or milestone reached during this time period.",
+      "As a Junior Software Engineer, I specialize in building responsive and user-friendly web applications using React.js, HTML, CSS, and Tailwind. I translate Figma designs into pixel-perfect interfaces while ensuring performance optimization and cross-device compatibility. By implementing reusable components and integrating APIs seamlessly, I help deliver efficient and scalable front-end solutions. My work contributes to faster delivery cycles and improved user experience across projects.",
   },
   {
-    year: "2022",
-    title: "Important Milestone",
-    subtitle: "Organization Name",
-    description: "Details about this significant milestone and its impact.",
+    year: "February 2021  - October 2024",
+    title: "BSc in Computer Science and Engineering",
+    subtitle: "Canadian University of Bangladesh",
+    description: "With an outstanding CGPA of 3.68, I profoundly excelled over four years, gaining extensive knowledge, honing my problem-solving skills, and building a strong foundation in both theoretical and practical aspects of my field.",
   },
   {
-    year: "2021",
-    title: "Key Event",
-    subtitle: "Organization Name",
-    description: "Information about this key event in the timeline.",
+    year: "January 2018 - January 2020",
+    title: "Data Entry Specialist & Transcribing",
+    subtitle: "Fiver & Upwrok",
+    description: "Assisted in data transcribing and data entry, ensuring accuracy and consistency across business records. Supported the team by organizing, cleaning, and maintaining datasets, enabling smoother reporting and analysis.",
   },
   {
-    year: "2020",
-    title: "Key Event",
-    subtitle: "Organization Name",
-    description: "Information about this key event in the timeline.",
+    year: "January 2019 - January 2020",
+    title: "Advanced Levels",
+    subtitle: "Edexcel Board of British Council",
+    description: "",
+  },
+  {
+    year: "January 2018",
+    title: "Ordinary Level",
+    subtitle: "Edexcel Board of British Council",
+    description: "",
   },
 ];
 
