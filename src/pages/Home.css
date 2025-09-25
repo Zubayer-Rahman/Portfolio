@@ -38,7 +38,6 @@
   position: absolute;             
   top: 30px;
   display: flex;
-  align-items: center;
   justify-content: center;
   justify-self: center;
   background: rgba(20, 20, 20, 0.3);
@@ -91,7 +90,7 @@
   color: #bcbcbc;
 }
 
-@media (max-width: 768px) {
+@media (width < 768px) {
   .info h2, .skills h2, .looper h2, .timeline h2:first-child{
     font-size: 2.5rem;
   }
@@ -112,11 +111,6 @@
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    width: 60%;
-    padding: 1rem 1.5rem;
-    justify-self: center;
-  }
   .navLinks {
     gap: 1rem;
   }
