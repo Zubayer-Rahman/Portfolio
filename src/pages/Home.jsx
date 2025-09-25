@@ -29,7 +29,7 @@ const Home = () => {
           <ul className="navLinks">
               <li><a href="/" className='links'>Home</a></li>
               <li><a href="#about" className='links'>About</a></li>
-              <li><a href="#contactus" className='links'>Contact Us</a></li>
+              <li><a href="#contactus" className='links'>Projects</a></li>
               <li><a href="#blog" className='links'>Blog</a></li>
           </ul>
       </nav>
@@ -41,7 +41,7 @@ const Home = () => {
           <h2>More about me!!</h2>
         </div>
 
-        <div className="carousel">
+        <div className="profile-card">
           <ProfileCard
             name="Zubayer Rahman"
             title="Software Engineer"
@@ -95,7 +95,6 @@ const Home = () => {
       </div>
 
       <div className="timeline">
-        <h2>My Journey Through the Years</h2>
         <ScrollTimeline />
       </div>
 

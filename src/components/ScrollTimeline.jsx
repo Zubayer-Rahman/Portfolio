@@ -38,7 +38,7 @@ const DEFAULT_EVENTS = [
 
 const ScrollTimeline = ({
   events = DEFAULT_EVENTS,
-  title = "A Short Timeline",
+  title = "My Journey Throughout the Years",
   animationOrder = "sequential",
   cardAlignment = "alternating",
   progressIndicator = true,
