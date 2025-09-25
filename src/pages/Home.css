@@ -1,7 +1,7 @@
 .about, .skills, .looper, .timeline{
     color: #dfdfdf;
     background-color: #101010;
-    padding: 50px 20px;
+    padding: 40px 0px;
     font-size: 1.2rem;
     line-height: 1.6;
     display: flex;
@@ -15,6 +15,7 @@
 .info h2, .skills h2, .looper h2, .timeline h2:first-child{
     font-size: 4rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-weight: bold;
     color: #dfdfdf;
     background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
