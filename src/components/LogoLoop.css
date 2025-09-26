@@ -119,3 +119,9 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 996px){
+  .logoloop__item::marker{
+    content: '';
+  }
+}

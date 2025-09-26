@@ -9,6 +9,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    background-color: #101010;
+}
+
 :root {
     --background: #101010;
     --sec: #a476ff;

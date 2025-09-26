@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router';
 import Home from './pages/Home.jsx';
 import 'normalize.css';
+import './App.css'
 
 function App() {
   return (

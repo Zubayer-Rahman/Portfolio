@@ -9,6 +9,7 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
+    position: relative;
 }
 
 
@@ -34,21 +35,19 @@
 }
 
 
-.navbar {
-  position: absolute;             
-  top: 30px;
+.navbar, nav {        
+  position: sticky;
+  top: 10px; 
   display: flex;
   justify-content: center;
-  justify-self: center;
   background: rgba(20, 20, 20, 0.3);
   backdrop-filter: blur(12px); 
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.2rem 2rem;
   z-index: 1000;
   border-radius: 30px;
-  width: 30%;
   margin: 0 auto;
-  transition: background 0.3s ease, transform 0.3s ease;
+  width: 60%;
 }
 
 .navLinks {
@@ -90,15 +89,13 @@
   color: #bcbcbc;
 }
 
-@media (width < 768px) {
+@media (max-width: 769px) {
   .info h2, .skills h2, .looper h2, .timeline h2:first-child{
     font-size: 2.5rem;
   }
   
   .navbar {
     width: 60%;
-    padding: 1rem 1.5rem;
-    justify-self: center;
   }
 
   .navLinks {
