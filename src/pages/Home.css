@@ -40,6 +40,8 @@
   margin-top: 10px;
 }
 
+
+
 .navbar, nav {        
   position: sticky;
   top: 10px; 
@@ -109,6 +111,11 @@
 
   .links {
     font-size: 0.76rem;
+  }
+
+  .description{
+    font-size: 14px;
+    padding: 15px;
   }
 }
 
