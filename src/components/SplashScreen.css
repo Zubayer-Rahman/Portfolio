@@ -35,3 +35,9 @@
   font-family: "Montserrat", sans-serif; /* contrasting stylish font */
   letter-spacing: 1px;
 }
+
+@media (max-width: 768px) {
+  .splash-screen{
+    padding: 20px;
+  }
+}

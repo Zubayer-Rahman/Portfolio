@@ -39,7 +39,7 @@ const SplashScreen = () => {
             transition={{ duration: 2, delay: 1 }}
             exit={{ opacity: 0, scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Software Engineer | React & Next.js
+            Software Engineer | Dotlines BD
           </motion.p>
         </motion.div>
       )}

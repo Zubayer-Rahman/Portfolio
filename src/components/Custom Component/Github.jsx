@@ -1,7 +1,6 @@
 import React from "react";
 import "./Github.css";
-import GitHubCalendar from "react-github-calendar";
-
+import GitHeatMap from './GitHeatMap.jsx';
 const GitHubWidget = () => {
   return (
     <div style={{ textAlign: "center", margin: "3rem 0" }}>
@@ -20,10 +19,7 @@ const GitHubWidget = () => {
       </div>
 
       <div className="github-contributions">
-        <GitHubCalendar
-          username="Zubayer-Rahman"
-          colorScheme="dark"
-        />
+        <GitHeatMap />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
 }
 
 
-.info h2, .skills h2, .looper h2, .timeline h2:first-child{
+.info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title{
     font-size: 4rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -35,12 +35,19 @@
 }
 
 .description{
-  max-width: 900px;
   font-size: 24px;
   margin-top: 10px;
   font-weight: 500;
+  text-align: left;
 }
 
+.profile-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0px 200px;
+}
 
 
 .navbar, nav {        
@@ -103,7 +110,7 @@
   }
   
   .navbar {
-    width: 60%;
+    width: 80%;
   }
 
   .navLinks {
@@ -115,8 +122,14 @@
   }
 
   .description{
-    font-size: 14px;
-    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .profile-card{
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
