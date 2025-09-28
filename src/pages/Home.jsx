@@ -3,7 +3,7 @@ import './Home.css'
 // import Header from '../components/Header.jsx'
 import Banner from '../components/Banner.jsx'
 import ProfileCard from '../components/ProfileCard.jsx'
-import ScrambledText from '../components/ScrambledText.jsx'
+// import ScrambledText from '../components/ScrambledText.jsx'
 import ScrollVelocity from '../components/Scroller.jsx'
 import LogoLoop from '../components/LogoLoop';
 import avatarImage from '../asset/zubayer.png'
@@ -57,15 +57,7 @@ const Home = () => {
         </div>
 
         <div className="description">
-          <ScrambledText
-            className="scrambled-text-demo"
-            radius={100}
-            duration={1.2}
-            speed={0.5}
-            scrambleChars=".:"
-          >
-            I am proficient in HTML, CSS, Tailwind, and SCSS frameworks, with solid intermediate-level React development skills. I excel in crafting dynamic UIs and integrating advanced functionalities using JavaScript. I prioritize user-centric digital experiences that meet client and user needs efficiently.
-          </ScrambledText>
+          <h2>I am proficient in HTML, CSS, Tailwind, and SCSS frameworks, with solid intermediate-level React development skills. I excel in crafting dynamic UIs and integrating advanced functionalities using JavaScript. I prioritize user-centric digital experiences that meet client and user needs efficiently.</h2>
         </div>
       </div>
 
