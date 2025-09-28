@@ -9,6 +9,7 @@ import LogoLoop from '../components/LogoLoop';
 import avatarImage from '../asset/zubayer.png'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql, SiGit, SiSass } from 'react-icons/si';
 import ScrollTimeline from '../components/ScrollTimeline.jsx'
+import GitHubWidget from '../components/Custom Component/Github.jsx'
 
 const Home = () => {
   const techLogos = [
@@ -88,6 +89,11 @@ const Home = () => {
 
       <div className="timeline">
         <ScrollTimeline />
+      </div>
+
+      <div className="github-activity">
+        <h2 className="github-title">My GitHub Activity</h2>
+        <GitHubWidget />
       </div>
 
       <div className="projectshowcase">

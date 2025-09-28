@@ -1,0 +1,82 @@
+.github-activity{
+    padding: 20px;
+}
+.github-widget {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #0d0d0d; /* match your site’s theme */
+  border-radius: 20px;
+  margin: 3rem auto;
+  max-width: 1000px;
+}
+
+.github-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.github-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.github-card {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.github-card:hover {
+  transform: translateY(-5px);
+}
+
+.github-contributions {
+  margin-top: 2rem;
+}
+
+.github-heatmap {
+  width: 100%;
+  border-radius: 10px;
+  background: #111;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.github-widget {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #0d1117; /* GitHub dark background */
+  border-radius: 12px;
+  margin: 3rem auto;
+  max-width: 1000px;
+}
+
+.github-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c9d1d9; /* GitHub text color */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.github-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.github-card {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 8px;
+}
+
