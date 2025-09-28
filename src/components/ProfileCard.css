@@ -385,15 +385,14 @@
 .pc-details h3 {
   font-weight: 600;
   margin: 0;
-  font-size: 44px;
+  font-size: 34px;
   margin: 0;
   background-image: linear-gradient(to bottom, #fff, #6f6fbe);
-  background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 14px;
 }
 

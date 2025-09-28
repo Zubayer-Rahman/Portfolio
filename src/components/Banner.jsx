@@ -14,7 +14,7 @@ const Banner = () => {
               density={1.5}
               glowIntensity={0.5}
               saturation={0.8}
-              hueShift={240}
+              hueShift={1500}
             />
         </div>
         
@@ -22,7 +22,7 @@ const Banner = () => {
             <h1>
               <TextType 
                 text={["HELLO, I AM ZUBAYER RAHMAN", "WELCOME TO MY PORTFOLIO", "EXPLORE MY WORK"]}
-                typingSpeed={75}
+                typingSpeed={65}
                 pauseDuration={1500}
                 showCursor={true}
                 cursorCharacter="_"
