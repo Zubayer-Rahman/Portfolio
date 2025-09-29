@@ -1,10 +1,10 @@
 import React from "react";
 import "./Home.css";
 // import Header from '../components/Header.jsx'
-import Banner from "../components/Banner.jsx";
-import ProfileCard from "../components/ProfileCard.jsx";
 // import ScrambledText from '../components/ScrambledText.jsx'
 // import ScrollVelocity from '../components/Scroller.jsx'
+import Banner from "../components/Banner.jsx";
+import ProfileCard from "../components/ProfileCard.jsx";
 import LogoLoop from "../components/LogoLoop";
 import avatarImage from "../asset/zubayer.png";
 import {
@@ -19,7 +19,7 @@ import {
   SiSass,
 } from "react-icons/si";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
-import GitHubWidget from "../components/Custom Component/Github.jsx";
+// import GitHubWidget from "../components/Custom Component/Github.jsx";
 
 const Home = () => {
   const techLogos = [
@@ -67,20 +67,21 @@ const Home = () => {
           <h2>More about me!!</h2>
         </div>
 
-        <div className="profile-card">
-          <ProfileCard
-            name="Zubayer Rahman"
-            title="Software Engineer"
-            handle="zubayer"
-            status="Dotlines Bangladesh"
-            contactText="Contact Me"
-            avatarUrl={avatarImage}
-            showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={false}
-            onContactClick={() => console.log("Contact clicked")}
-          />
-          <div className="description">
+          <div className="profile-card">
+            <ProfileCard
+              name="Zubayer Rahman"
+              title="Software Engineer"
+              handle="zubayer"
+              status="Dotlines Bangladesh"
+              contactText="Contact Me"
+              avatarUrl={avatarImage}
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => console.log("Contact clicked")}
+            />
+          </div>
+          <div className="profile-description">
             <h2>
               I am proficient in HTML, CSS, Tailwind, and SCSS frameworks, with
               solid intermediate-level React development skills. I excel in
@@ -90,7 +91,6 @@ const Home = () => {
             </h2>
           </div>
         </div>
-      </div>
 
       {/* <div className="skills">
         <h2 >What do i Know?</h2>
