@@ -4,7 +4,7 @@ const GITHUB_GRAPHQL = "https://api.github.com/graphql";
 
 const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
   const [stats, setStats] = useState({});
-  const [contributions, setContributions] = useState([]);
+  const [weeks, setWeeks] = useState([]);
   const [repos, setRepos] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
   const [availableYears, setAvailableYears] = useState([]);
@@ -51,7 +51,7 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
     fetch(GITHUB_GRAPHQL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`, // Use your GitHub Personal Access Token
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query }),
@@ -60,7 +60,7 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
       .then((data) => {
         const user = data.data.user;
 
-        // Stats
+        // --- Stats ---
         setStats({
           followers: user.followers.totalCount,
           repos: user.repositories.totalCount,
@@ -69,40 +69,34 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
               .totalContributions,
         });
 
-        // Contributions
-        const allWeeks =
-          user.contributionsCollection.contributionCalendar.weeks;
-        const days = allWeeks.flatMap((w) => w.contributionDays);
-        setContributions(days);
+        // --- Weeks (structured grid) ---
+        setWeeks(user.contributionsCollection.contributionCalendar.weeks);
 
-        // Months
+        // --- Month Labels ---
         setMonthLabels(
           user.contributionsCollection.contributionCalendar.months
         );
 
-        // Repos
+        // --- Repositories ---
         setRepos(user.pinnedItems.nodes);
 
-        // Available years
+        // --- Available Years (from join year until now) ---
         const currentYear = new Date().getFullYear();
-        const joinYear = 2019; // Adjust for your GitHub join year
+        const joinYear = 2019; // change to YOUR GitHub join year
         const yearList = [];
         for (let y = currentYear; y >= joinYear; y--) yearList.push(y);
         setAvailableYears(yearList);
       });
   }, [username, token, year]);
 
-  // --- GitHub palette ---
+  // Official GitHub palette
   const GITHUB_COLORS = [
-    "#151b23", // level 0
-    "#9be9a8", // level 1
-    "#40c463", // level 2
-    "#30a14e", // level 3
-    "#216e39", // level 4
+    "#151b23", // 0 contributions
+    "#9be9a8",
+    "#40c463",
+    "#30a14e",
+    "#216e39", // max contributions
   ];
-
-  // Weekday labels: show only Mon, Wed, Fri like GitHub
-  const weekdays = ["Mon", "Wed", "Fri"];
 
   return (
     <section
@@ -112,10 +106,10 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
         color: "#ddd",
         background: "#101010",
         borderRadius: "12px",
+        margin: "2rem 0",
       }}
     >
-
-      {/* Stats Row */}
+      {/* --- Stats Row --- */}
       <div
         style={{
           display: "flex",
@@ -131,7 +125,7 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
         </div>
       </div>
 
-      {/* Year Selector */}
+      {/* --- Year Selector --- */}
       <div style={{ textAlign: "center", marginBottom: "1rem" }}>
         {availableYears.map((y) => (
           <button
@@ -153,18 +147,18 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
         ))}
       </div>
 
-      {/* Month Labels */}
+      {/* --- Month Labels --- */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: `30px repeat(53, 15px)`, // leave space for weekdays
+          gridTemplateColumns: `30px repeat(${weeks.length}, 15px)`,
           justifyContent: "center",
           fontSize: "12px",
           marginBottom: "6px",
           color: "#aaa",
         }}
       >
-        <div /> {/* empty cell for weekday column */}
+        <div /> {/* empty corner for weekday labels */}
         {monthLabels.map((month) => (
           <div key={month.name} style={{ gridColumn: "span 4" }}>
             {month.name}
@@ -172,70 +166,90 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
         ))}
       </div>
 
-      {/* Heatmap with Weekday Labels */}
+      {/* --- Heatmap --- */}
       <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* Weekday Labels Column */}
+        {/* Weekday Labels */}
         <div
           style={{
             display: "grid",
-            gridTemplateRows: "repeat(7, 15px)", // 7 days per week
+            gridTemplateRows: "repeat(7, 15px)",
             gridGap: "3px",
             marginRight: "6px",
             fontSize: "12px",
             color: "#aaa",
           }}
         >
-          {Array.from({ length: 7 }, (_, i) =>
-            weekdays.includes(
-              ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][i]
-            ) ? (
-              <div key={i} style={{ lineHeight: "15px" }}>
-                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][i]}
-              </div>
-            ) : (
-              <div key={i}></div>
-            )
-          )}
+          {["Mon", "Wed", "Fri"].map((d) => (
+            <div key={d} style={{ lineHeight: "15px" }}>
+              {d}
+            </div>
+          ))}
         </div>
 
-        {/* Contributions Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(53, 15px)", // weeks
-            gridAutoRows: "15px",
-            gridGap: "3px",
-          }}
-        >
-          {contributions.map((day) => (
+        {/* Weeks (columns) */}
+        <div style={{ display: "flex", gap: "3px" }}>
+          {weeks.map((week, wi) => (
             <div
-              key={day.date}
-              title={`${day.date} → ${day.contributionCount} contributions`}
+              key={wi}
               style={{
-                width: "15px",
-                height: "15px",
-                backgroundColor: day.color || GITHUB_COLORS[0],
-                borderRadius: "3px",
-                cursor: "pointer",
-                transition: "transform 0.2s ease-in-out",
+                display: "grid",
+                gridTemplateRows: "repeat(7, 15px)",
+                gridGap: "3px",
               }}
-              onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
-              onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-            />
+            >
+              {week.contributionDays.map((day, di) => {
+                // fallback if API returns null
+                let fill =
+                  (day.contributionCount === 0
+                    ? GITHUB_COLORS[0]
+                    : day.contributionCount < 5
+                    ? GITHUB_COLORS[1]
+                    : day.contributionCount < 8
+                    ? GITHUB_COLORS[2]
+                    : day.contributionCount < 10
+                    ? GITHUB_COLORS[3]
+                    : GITHUB_COLORS[4]);
+
+                return (
+                  <div
+                    key={di}
+                    title={`${day.date}: ${day.contributionCount} contributions`}
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      backgroundColor: fill,
+                      borderRadius: "3px",
+                      cursor: "pointer",
+                      transition: "transform 0.2s ease-in-out",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.2)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
+                    onClick={() =>
+                      window.open(
+                        `https://github.com/${username}?tab=overview&from=${day.date}&to=${day.date}`,
+                        "_blank"
+                      )
+                    }
+                  />
+                );
+              })}
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Pinned Repositories */}
-      <h3 style={{ marginTop: "2rem", padding: "0px 80px", fontSize: "24px", fontWeight:"600"
-      }}>📌 Pinned Projects</h3>
+      {/* --- Pinned Repositories --- */}
+      <h3 style={{ marginTop: "2rem" }}>📌 Pinned Projects</h3>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
           gap: "1.5rem",
           marginTop: "1rem",
-          padding: "0px 80px",
         }}
       >
         {repos.map((repo) => (
