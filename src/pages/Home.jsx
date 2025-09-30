@@ -1,8 +1,5 @@
 import React from "react";
 import "./Home.css";
-// import Header from '../components/Header.jsx'
-// import ScrambledText from '../components/ScrambledText.jsx'
-// import ScrollVelocity from '../components/Scroller.jsx'
 import Banner from "../components/Banner.jsx";
 import ProfileCard from "../components/ProfileCard.jsx";
 import LogoLoop from "../components/LogoLoop";
@@ -19,7 +16,7 @@ import {
   SiSass,
 } from "react-icons/si";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
-// import GitHubWidget from "../components/Custom Component/Github.jsx";
+import GitHubDashboard from "../components/Custom Component/Github.jsx";
 
 const Home = () => {
   const techLogos = [
@@ -123,7 +120,10 @@ const Home = () => {
 
       <div className="github-activity">
         <h2 className="github-title">My GitHub Activity</h2>
-        {/* <GitHubWidget /> */}
+        <GitHubDashboard 
+          username="Zubayer-Rahman"
+          token={process.env.REACT_APP_GITHUB_TOKEN}
+        />
       </div>
 
       <div className="projectshowcase"></div>
