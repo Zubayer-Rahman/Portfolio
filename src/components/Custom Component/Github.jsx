@@ -92,10 +92,10 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
   // Official GitHub palette
   const GITHUB_COLORS = [
     "#151b23", // 0 contributions
-    "#9be9a8",
-    "#40c463",
-    "#30a14e",
-    "#216e39", // max contributions
+    "#033a16",
+    "#196c2e",
+    "#2ea043",
+    "#56d364", // max contributions
   ];
 
   return (
@@ -158,7 +158,7 @@ const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
           color: "#aaa",
         }}
       >
-        <div /> {/* empty corner for weekday labels */}
+        {/* empty corner for weekday labels */}
         {monthLabels.map((month) => (
           <div key={month.name} style={{ gridColumn: "span 4" }}>
             {month.name}
