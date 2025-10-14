@@ -16,7 +16,7 @@ import {
   SiSass,
 } from "react-icons/si";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
-import GitHubDashboard from "../components/Custom Component/Github.jsx";
+// import GitHubDashboard from "../components/Custom Component/Github.jsx";
 
 const Home = () => {
   const techLogos = [
@@ -118,13 +118,13 @@ const Home = () => {
         <ScrollTimeline />
       </div>
 
-      <div className="github-activity">
+      {/* <div className="github-activity">
         <h2 className="github-title">My GitHub Activity</h2>
         <GitHubDashboard 
           username="Zubayer-Rahman"
           token={process.env.REACT_APP_GITHUB_TOKEN}
         />
-      </div>
+      </div> */}
 
       <div className="projectshowcase"></div>
 
