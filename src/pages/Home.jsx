@@ -32,31 +32,6 @@ const Home = () => {
   ];
   return (
     <>
-      <nav className="navbar">
-        <ul className="navLinks">
-          <li>
-            <a href="/" className="links">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="links">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#contactus" className="links">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#blog" className="links">
-              Blog
-            </a>
-          </li>
-        </ul>
-      </nav>
-
       <Banner />
 
       <div className="about" id="about">
@@ -100,6 +75,11 @@ const Home = () => {
         </div>
       </div> */}
 
+      
+      <div className="timeline">
+      <ScrollTimeline />
+      </div>
+      
       <div className="looper">
         <h2>Skill Set</h2>
         <LogoLoop
@@ -114,8 +94,10 @@ const Home = () => {
         />
       </div>
 
-      <div className="timeline">
-        <ScrollTimeline />
+
+
+      <div className="skill-set">
+        
       </div>
 
       {/* <div className="github-activity">
@@ -126,7 +108,10 @@ const Home = () => {
         />
       </div> */}
 
-      <div className="projectshowcase"></div>
+      <div className="projectshowcase">
+        
+      
+      </div>
 
       {/* <Footer /> */}
     </>

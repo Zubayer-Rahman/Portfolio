@@ -21,11 +21,11 @@ const Banner = () => {
         <div className="banner-content">
             <h1>
               <TextType 
-                text={["HELLO, I AM ZUBAYER RAHMAN", "WELCOME TO MY PORTFOLIO", "EXPLORE MY WORK"]}
+                text={["HELLO, I AM ZUBAYER RAHMAN", "WELCOME TO MY PORTFOLIO"]}
                 typingSpeed={65}
                 pauseDuration={1500}
                 showCursor={true}
-                cursorCharacter="_"
+                cursorCharacter="|"
               />
             </h1>
             <GradientText
@@ -37,7 +37,7 @@ const Banner = () => {
               I am a Software Engineer
             </GradientText>
 
-            <button>See Now</button>
+            <button>Projects</button>
         </div>
     </div>
   )

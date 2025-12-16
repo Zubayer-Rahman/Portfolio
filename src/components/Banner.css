@@ -1,5 +1,5 @@
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+    font-family: "Montserrat", sans-serif;
 }
 
 .particles-container {
@@ -7,29 +7,38 @@
     width: 100%;
     height: 100%;
 }
+
 .banner-container {
     width: 100%;
-    height: 600px; /* Set a fixed height or a height relative to the viewport (e.g., 80vh) */
-    position: relative; /* This is crucial for positioning children absolutely */
-    overflow: hidden; /* Hides any particles that move outside the banner's boundaries */
+    height: 600px;
+    /* Set a fixed height or a height relative to the viewport (e.g., 80vh) */
+    position: relative;
+    /* This is crucial for positioning children absolutely */
+    overflow: hidden;
+    /* Hides any particles that move outside the banner's boundaries */
     background-color: #101010;
-    color: #dfdfdf; /* Ensures text is visible against the dark background */
+    color: #dfdfdf;
+    /* Ensures text is visible against the dark background */
 }
 
 /* Particles Background */
 .particles-background {
-    position: absolute; /* Positions the particles relative to the banner-container */
+    position: absolute;
+    /* Positions the particles relative to the banner-container */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3; /* Sets a lower z-index to place it behind the content */
+    z-index: 3;
+    /* Sets a lower z-index to place it behind the content */
 }
 
 /* Banner Content */
 .banner-content {
-    position: relative; /* Brings the content to the foreground */
-    z-index: 3; /* Ensures content is on top of the particles */
+    position: relative;
+    /* Brings the content to the foreground */
+    z-index: 3;
+    /* Ensures content is on top of the particles */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -40,9 +49,10 @@
 }
 
 .banner-content h1 {
-    font-size: 3em;
+    font-size: 5em;
     margin: 0;
     margin-bottom: 0.5em;
+    line-height: 25px;
 }
 
 .banner-content button {
@@ -64,16 +74,15 @@
     color: #ffffff;
 }
 
-.gradient-text  {
+.gradient-text {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 3rem;
     background: transparent;
 }
 
-@media (max-width: 768px){
-  .banner-content{
-    padding: 15px;
-  }
+@media (max-width: 768px) {
+    .banner-content {
+        padding: 15px;
+    }
 }
-
