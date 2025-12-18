@@ -8,7 +8,9 @@ const DEFAULT_EVENTS = [
     title: "Junior Software Engineer",
     subtitle: "Dotlines Bangladesh",
     description:
-      "As a Junior Software Engineer, I specialize in building responsive and user-friendly web applications using React.js, HTML, CSS, and Tailwind. I translate Figma designs into pixel-perfect interfaces while ensuring performance optimization and cross-device compatibility. By implementing reusable components and integrating APIs seamlessly, I help deliver efficient and scalable front-end solutions. My work contributes to faster delivery cycles and improved user experience across projects.",
+      "Developed 15+ responsive UI components in React.js and Tailwind CSS, reducing code duplication by 30% through reusable component architecture. Translated 20+ Figma design mockups into pixel-perfect, mobile-responsive web pages, achieving 98% design fidelity across Chrome, Safari, and Firefox",
+      "":
+      "Integrated 5+ RESTful APIs for user authentication, data fetching, and payment processing, improving page load time by 25% through optimized async calls"
   },
   {
     year: "February 2021  - October 2024",

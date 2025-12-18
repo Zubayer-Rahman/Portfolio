@@ -39,30 +39,32 @@ const Home = () => {
           <h2>More about me!!</h2>
         </div>
 
-          <div className="profile-card">
-            <ProfileCard
-              name="Zubayer Rahman"
-              title="Software Engineer"
-              handle="zubayer"
-              status="Dotlines Bangladesh"
-              contactText="Contact Me"
-              avatarUrl={avatarImage}
-              showUserInfo={true}
-              enableTilt={true}
-              enableMobileTilt={false}
-              onContactClick={() => console.log("Contact clicked")}
-            />
-          </div>
-          <div className="profile-description">
-            <h2>
-              I am proficient in HTML, CSS, Tailwind, and SCSS frameworks, with
-              solid intermediate-level React development skills. I excel in
-              crafting dynamic UIs and integrating advanced functionalities
-              using JavaScript. I prioritize user-centric digital experiences
-              that meet client and user needs efficiently.
-            </h2>
-          </div>
+        <div className="profile-card">
+          <ProfileCard
+            name="Zubayer Rahman"
+            title="MERN Stack Dev"
+            handle="zubayer"
+            status="Dotlines Bangladesh"
+            contactText="Contact Me"
+            avatarUrl={avatarImage}
+            showUserInfo={true}
+            enableTilt={true}
+            enableMobileTilt={false}
+            onContactClick={() => console.log("Contact clicked")}
+          />
         </div>
+        <div className="profile-description">
+          <h2>
+            Proficient MERN Stack Developer with extensive experience in MongoDB, Express.js, React.js, Node.js, along with
+            HTML5, CSS3, JavaScript (ES6+), and responsive web design. Adept at building scalable, high-performance web
+            applications with seamless front-end and back-end integration. Skilled in RESTful API development and database
+            design. Proficient in cross-browser compatibility, performance optimization, and CSS frameworks like Bootstrap and
+            Tailwind CSS. Strong background in version control (Git/GitHub), Agile methodologies, UI/UX design feasibility, and
+            delivering quality solutions in fast-paced environments. Committed to continuous learning, writing clean maintainable
+            code, and staying current with evolving industry trends and technologies.
+          </h2>
+        </div>
+      </div>
 
       {/* <div className="skills">
         <h2 >What do i Know?</h2>
@@ -75,11 +77,11 @@ const Home = () => {
         </div>
       </div> */}
 
-      
+
       <div className="timeline">
-      <ScrollTimeline />
+        <ScrollTimeline />
       </div>
-      
+
       <div className="looper">
         <h2>Skill Set</h2>
         <LogoLoop
@@ -97,7 +99,18 @@ const Home = () => {
 
 
       <div className="skill-set">
-        
+        <div className="frontend">
+
+        </div>
+        <div className="backend">
+
+        </div>
+        <div className="database">
+
+        </div>
+        <div className="tools">
+
+        </div>
       </div>
 
       {/* <div className="github-activity">
@@ -109,8 +122,8 @@ const Home = () => {
       </div> */}
 
       <div className="projectshowcase">
-        
-      
+
+
       </div>
 
       {/* <Footer /> */}

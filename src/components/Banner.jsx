@@ -7,38 +7,32 @@ import GradientText from './GradientText.jsx';
 const Banner = () => {
   return (
     <div className="banner-container">
-        <div className="particles-background">
-            <Galaxy 
-              mouseRepulsion={true}
-              mouseInteraction={true}
-              density={1.5}
-              glowIntensity={0.5}
-              saturation={0.8}
-              hueShift={1500}
-            />
-        </div>
-        
-        <div className="banner-content">
-            <h1>
-              <TextType 
-                text={["HELLO, I AM ZUBAYER RAHMAN", "WELCOME TO MY PORTFOLIO"]}
-                typingSpeed={65}
-                pauseDuration={1500}
-                showCursor={true}
-                cursorCharacter="|"
-              />
-            </h1>
-            <GradientText
-              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-              animationSpeed={10}
-              showBorder={false}
-              className="gradient-text"
-            >
-              I am a Software Engineer
-            </GradientText>
+      <div className="particles-background">
+        <Galaxy
+          mouseRepulsion={true}
+          mouseInteraction={true}
+          density={1.5}
+          glowIntensity={0.5}
+          saturation={0.8}
+          hueShift={1500}
+        />
+      </div>
 
-            <button>Projects</button>
-        </div>
+      <div className="banner-content">
+        <h1>
+          Hello! I am <span>Zubayer Rahman</span>
+        </h1>
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={10}
+          showBorder={false}
+          className="gradient-text"
+        >
+          MERN Stack Developer
+        </GradientText>
+
+        <button>Projects</button>
+      </div>
     </div>
   )
 }
