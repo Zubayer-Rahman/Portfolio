@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.css";
 import Banner from "../components/Banner.jsx";
 import ProfileCard from "../components/ProfileCard.jsx";
-import LogoLoop from "../components/LogoLoop";
 import avatarImage from "../asset/zubayer.png";
 import {
   SiReact,
@@ -83,17 +82,27 @@ const Home = () => {
       </div>
 
       <div className="looper">
-        <h2>Skill Set</h2>
-        <LogoLoop
-          logos={techLogos}
-          speed={120}
-          direction="left"
-          logoHeight={48}
-          gap={40}
-          pauseOnHover
-          scaleOnHover
-          ariaLabel="Technology partners"
-        />
+        <h2>My Skill</h2>
+        <div className="skill-conatiner">
+          <div className="front-end">
+            <h4 className="title">Front End</h4>
+          </div>
+
+          <div className="back-end">
+            <h4 className="title">Back End</h4>
+
+          </div>
+
+          <div className="database">
+            <h4 className="title">Database</h4>
+
+          </div>
+
+          <div className="tools">
+            <h4 className="title">Tools</h4>
+
+          </div>
+        </div>
       </div>
 
 

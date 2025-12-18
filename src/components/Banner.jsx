@@ -1,8 +1,6 @@
 import React from 'react'
 import './Banner.css'
 import Galaxy from './Galaxy';
-import TextType from './TextType.jsx';
-import GradientText from './GradientText.jsx';
 
 const Banner = () => {
   return (
@@ -22,14 +20,10 @@ const Banner = () => {
         <h1>
           Hello! I am <span>Zubayer Rahman</span>
         </h1>
-        <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={10}
-          showBorder={false}
-          className="gradient-text"
-        >
+
+        <h4 className='designation'>
           MERN Stack Developer
-        </GradientText>
+        </h4>
 
         <button>Projects</button>
       </div>

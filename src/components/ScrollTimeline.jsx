@@ -8,9 +8,7 @@ const DEFAULT_EVENTS = [
     title: "Junior Software Engineer",
     subtitle: "Dotlines Bangladesh",
     description:
-      "Developed 15+ responsive UI components in React.js and Tailwind CSS, reducing code duplication by 30% through reusable component architecture. Translated 20+ Figma design mockups into pixel-perfect, mobile-responsive web pages, achieving 98% design fidelity across Chrome, Safari, and Firefox",
-      "":
-      "Integrated 5+ RESTful APIs for user authentication, data fetching, and payment processing, improving page load time by 25% through optimized async calls"
+      "Developed 15+ responsive UI components in React.js and Tailwind CSS, reducing code duplication by 30% through reusable component architecture. Translated 20+ Figma design mockups into pixel-perfect, mobile-responsive web pages, achieving 98% design fidelity across Chrome, Safari, and Firefox. Integrated 5+ RESTful APIs for user authentication, data fetching, and payment processing, improving page load time by 25% through optimized async calls. Refactored legacy HTML/CSS codebase to React components, reducing bundle size by 40% and improving Lighthouse performance score from 65 to 92. Collaborated with UX designers and backend engineers in Agile sprints to deliver 3 major feature releases ahead of schedule.",
   },
   {
     year: "February 2021  - October 2024",
