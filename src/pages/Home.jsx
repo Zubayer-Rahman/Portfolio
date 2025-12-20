@@ -6,6 +6,7 @@ import avatarImage from "../asset/zubayer.png";
 import framerMotion from "../asset/framer-motion.svg"
 import gsap from "../asset/gsap.png";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
+import ScrollVelocity from "../components/ScrollVelocity.jsx"
 import FloatingMenu from "../components/Floating Widgets/floatingMenu.jsx";
 import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 
@@ -66,7 +67,7 @@ const Home = () => {
         <h2>Tech Arsenal</h2>
         <div className="skill-container">
 
-          <ScrollReveal 
+          <ScrollReveal
             className="front-end"
           >
             <h4 className="title">Front End</h4>
@@ -107,17 +108,17 @@ const Home = () => {
               </div>
 
               <div className="tech-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" />
-              <p>Bootstrap</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" />
+                <p>Bootstrap</p>
               </div>
-              
+
               <div className="tech-item">
-                <img src={gsap} alt="" className="gsap"/>
+                <img src={gsap} alt="" className="gsap" />
                 <p>GSAP</p>
               </div>
 
               <div className="tech-item">
-                <img src={framerMotion} alt="" className="motion"/>
+                <img src={framerMotion} alt="" className="motion" />
                 <p>Framer Motion</p>
               </div>
             </div>
@@ -213,10 +214,21 @@ const Home = () => {
           token={process.env.REACT_APP_GITHUB_TOKEN}
         />
       </div> */}
-
+      <div className="project-title">
+        <h1>Featured Projects</h1>
+      </div>  
       <div className="projectshowcase">
-
-
+        
+        <div className="scroll-velocity">
+          <ScrollVelocity
+            texts={['React . Javascript . Tailwind . SCSS . Git . Node.js .']}
+            velocity={50}
+            className="custom-scroll-text"
+          />
+        </div>
+        <div className="projects">
+          <h1>asdasdasd</h1>
+        </div>
       </div>
 
       {/* <Footer /> */}

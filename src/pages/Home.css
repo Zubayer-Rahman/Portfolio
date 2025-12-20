@@ -14,7 +14,7 @@
 }
 
 
-.info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title{
+.info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title, .project-title h1{
     font-size: 4rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -151,6 +151,15 @@ width: 100%;
   width: 1.5rem;
   height: 1.5rem;
 }
+
+/* project showcase */
+.projectshowcase{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 900px 1fr;
+}
+
+
 
 @media (max-width: 769px) {
   .info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title{
