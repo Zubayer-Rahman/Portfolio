@@ -1,6 +1,7 @@
 import React from 'react'
 import './Banner.css'
 import Galaxy from './Galaxy';
+import ScrollReveal from './Scroll Reveal/scrollReveal';
 
 const Banner = () => {
   return (
@@ -10,23 +11,23 @@ const Banner = () => {
           mouseRepulsion={true}
           mouseInteraction={true}
           density={1.5}
-          glowIntensity={0.5}
+          glowIntensity={0.7}
           saturation={0.8}
           hueShift={1500}
         />
       </div>
 
-      <div className="banner-content">
+      <ScrollReveal className="banner-content">
         <h1>
           Hello! I am <span>Zubayer Rahman</span>
         </h1>
 
-        <h4 className='designation'>
+        <p className='designation'>
           MERN Stack Developer
-        </h4>
+        </p>
 
         <button>Projects</button>
-      </div>
+      </ScrollReveal>
     </div>
   )
 }

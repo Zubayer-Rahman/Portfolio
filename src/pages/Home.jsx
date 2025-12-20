@@ -3,14 +3,15 @@ import "./Home.css";
 import Banner from "../components/Banner.jsx";
 import ProfileCard from "../components/ProfileCard.jsx";
 import avatarImage from "../asset/zubayer.png";
+import framerMotion from "../asset/framer-motion.svg"
+import gsap from "../asset/gsap.png";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
 import FloatingMenu from "../components/Floating Widgets/floatingMenu.jsx";
+import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 
 const Home = () => {
   return (
     <>
-      <FloatingMenu/>
-
       <Banner />
 
       <div className="about" id="about">
@@ -18,7 +19,7 @@ const Home = () => {
           <h2>More about me!!</h2>
         </div>
 
-        <div className="profile-card">
+        <ScrollReveal className="profile-card">
           <ProfileCard
             name="Zubayer Rahman"
             title="MERN Stack Dev"
@@ -31,8 +32,8 @@ const Home = () => {
             enableMobileTilt={false}
             onContactClick={() => console.log("Contact clicked")}
           />
-        </div>
-        <div className="profile-description">
+        </ScrollReveal>
+        <ScrollReveal className="profile-description">
           <h2>
             Proficient MERN Stack Developer with extensive experience in MongoDB, Express.js, React.js, Node.js, along with
             HTML5, CSS3, JavaScript (ES6+), and responsive web design. Adept at building scalable, high-performance web
@@ -42,7 +43,7 @@ const Home = () => {
             delivering quality solutions in fast-paced environments. Committed to continuous learning, writing clean maintainable
             code, and staying current with evolving industry trends and technologies.
           </h2>
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* <div className="skills">
@@ -65,7 +66,9 @@ const Home = () => {
         <h2>Tech Arsenal</h2>
         <div className="skill-container">
 
-          <div className="front-end">
+          <ScrollReveal 
+            className="front-end"
+          >
             <h4 className="title">Front End</h4>
             <div className="tech-container">
               <div className="tech-item">
@@ -74,7 +77,7 @@ const Home = () => {
               </div>
 
               <div className="tech-item ">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" className="nextjs"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" className="nextjs" />
                 <p>Next JS</p>
               </div>
 
@@ -99,23 +102,28 @@ const Home = () => {
               </div>
 
               <div className="tech-item">
-                <i class="fa fa-wave-square"></i>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="" />
+                <p>SASS</p>
+              </div>
+
+              <div className="tech-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" />
+              <p>Bootstrap</p>
+              </div>
+              
+              <div className="tech-item">
+                <img src={gsap} alt="" className="gsap"/>
                 <p>GSAP</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" />
-                <p>Bootstrap</p>
-              </div>
-
-              <div className="tech-item">
-                <img src="" alt="" />
+                <img src={framerMotion} alt="" className="motion"/>
                 <p>Framer Motion</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="back-end ">
+          <ScrollReveal className="back-end ">
             <h4 className="title">Back End</h4>
             <div className="tech-container">
               <div className="tech-item">
@@ -129,7 +137,7 @@ const Home = () => {
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs" />
                 <p>Express Js</p>
               </div>
 
@@ -143,67 +151,57 @@ const Home = () => {
                 <p>React Router</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="database ">
+          <ScrollReveal className="database ">
             <h4 className="title">Database</h4>
             <div className="tech-container">
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
-                <p>Node JS</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" alt="" />
+                <p>Mongoose</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="" />
-                <p>Nest Js</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" />
+                <p>MongoDB</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
-                <p>Express Js</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="" className="prisma" />
+                <p>Prisma</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" alt="" />
-                <p>Nodemon</p>
-              </div>
-
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" alt="" />
-                <p>React Router</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" />
+                <p>My SQL</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="tools ">
+          <ScrollReveal className="tools ">
             <h4 className="title">Tools</h4>
             <div className="tech-container">
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
-                <p>Node JS</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" />
+                <p>Git</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="" />
-                <p>Nest Js</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" className="github" />
+                <p>GitHub</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
-                <p>Express Js</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" />
+                <p>Docker</p>
               </div>
 
               <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" alt="" />
-                <p>Nodemon</p>
-              </div>
-
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" alt="" />
-                <p>React Router</p>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="" />
+                <p>GitLab</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 

@@ -10,6 +10,7 @@
     text-align: center;
     gap: 1rem;
     position: relative;
+    padding: 40px 20px;
 }
 
 
@@ -111,23 +112,28 @@ max-width: 1280px;
 width: 100%;
 }
 
-.expressjs{
+.expressjs, .prisma, .gsap, .motion{
   background-color: #dfdfdf !important;
   border-radius: 5px !important;
   padding: 2px;
 }
 .nextjs{
   border: 1px solid #f6f6f6;
-  border-radius: 12px;
+  border-radius: 12px;  
+}
+
+.github{
+  background-color: #dfdfdf !important;
+  border: 1px solid #f6f6f6;
+  border-radius: 12px;  
 }
 
 .front-end, .back-end, .database, .tools{
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 300px 1fr;
   margin-bottom: 4rem;
   align-items: flex-start;
 }
-
 
 .tech-container{
   display: grid;
