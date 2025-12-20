@@ -3,34 +3,14 @@ import "./Home.css";
 import Banner from "../components/Banner.jsx";
 import ProfileCard from "../components/ProfileCard.jsx";
 import avatarImage from "../asset/zubayer.png";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPhp,
-  SiMysql,
-  SiGit,
-  SiSass,
-} from "react-icons/si";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
-// import GitHubDashboard from "../components/Custom Component/Github.jsx";
+import FloatingMenu from "../components/Floating Widgets/floatingMenu.jsx";
 
 const Home = () => {
-  const techLogos = [
-    { node: <SiReact />, title: "React" },
-    { node: <SiNextdotjs />, title: "Next.js" },
-    { node: <SiTypescript />, title: "TypeScript" },
-    { node: <SiTailwindcss />, title: "Tailwind CSS" },
-    { node: <SiNodedotjs />, title: "Nodejs" },
-    { node: <SiPhp />, title: "php" },
-    { node: <SiMysql />, title: "Mysql" },
-    { node: <SiGit />, title: "GIT" },
-    { node: <SiSass />, title: "SCSS" },
-  ];
   return (
     <>
+      <FloatingMenu/>
+
       <Banner />
 
       <div className="about" id="about">
@@ -82,45 +62,151 @@ const Home = () => {
       </div>
 
       <div className="looper">
-        <h2>My Skill</h2>
-        <div className="skill-conatiner">
+        <h2>Tech Arsenal</h2>
+        <div className="skill-container">
+
           <div className="front-end">
             <h4 className="title">Front End</h4>
+            <div className="tech-container">
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
+                <p>React JS</p>
+              </div>
+
+              <div className="tech-item ">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" className="nextjs"/>
+                <p>Next JS</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" />
+                <p>JavaScript</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" />
+                <p>Tailwind CSS</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" />
+                <p>HTML</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" />
+                <p>CSS</p>
+              </div>
+
+              <div className="tech-item">
+                <i class="fa fa-wave-square"></i>
+                <p>GSAP</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" />
+                <p>Bootstrap</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="" alt="" />
+                <p>Framer Motion</p>
+              </div>
+            </div>
           </div>
 
-          <div className="back-end">
+          <div className="back-end ">
             <h4 className="title">Back End</h4>
+            <div className="tech-container">
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
+                <p>Node JS</p>
+              </div>
 
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="" />
+                <p>Nest Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
+                <p>Express Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" alt="" />
+                <p>Nodemon</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" alt="" />
+                <p>React Router</p>
+              </div>
+            </div>
           </div>
 
-          <div className="database">
+          <div className="database ">
             <h4 className="title">Database</h4>
+            <div className="tech-container">
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
+                <p>Node JS</p>
+              </div>
 
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="" />
+                <p>Nest Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
+                <p>Express Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" alt="" />
+                <p>Nodemon</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" alt="" />
+                <p>React Router</p>
+              </div>
+            </div>
           </div>
 
-          <div className="tools">
+          <div className="tools ">
             <h4 className="title">Tools</h4>
+            <div className="tech-container">
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
+                <p>Node JS</p>
+              </div>
 
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="" />
+                <p>Nest Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" className="expressjs"/>
+                <p>Express Js</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" alt="" />
+                <p>Nodemon</p>
+              </div>
+
+              <div className="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" alt="" />
+                <p>React Router</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-
-
-      <div className="skill-set">
-        <div className="frontend">
-
-        </div>
-        <div className="backend">
-
-        </div>
-        <div className="database">
-
-        </div>
-        <div className="tools">
-
-        </div>
-      </div>
 
       {/* <div className="github-activity">
         <h2 className="github-title">My GitHub Activity</h2>

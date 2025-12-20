@@ -104,6 +104,48 @@
   color: #bcbcbc;
 }
 
+
+/* Tech Arsenal */
+.skill-container{
+max-width: 1280px;
+width: 100%;
+}
+
+.expressjs{
+  background-color: #dfdfdf !important;
+  border-radius: 5px !important;
+  padding: 2px;
+}
+.nextjs{
+  border: 1px solid #f6f6f6;
+  border-radius: 12px;
+}
+
+.front-end, .back-end, .database, .tools{
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  margin-bottom: 4rem;
+  align-items: flex-start;
+}
+
+
+.tech-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.tech-container .tech-item{
+  display: flex;
+  gap: 1rem;
+}
+
+.tech-container .tech-item img{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 @media (max-width: 769px) {
   .info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title{
     font-size: 2.5rem;
