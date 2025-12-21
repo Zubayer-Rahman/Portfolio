@@ -47,6 +47,9 @@
   transform: scale(0.8) translate3d(0, 0, 0.1px);
   background-size: 100% 100%;
   background-image: var(--behind-gradient);
+  width: 400px;
+  justify-self: flex-end;
+  margin-right: 80px;
 }
 
 .pc-card-wrapper:hover,
@@ -58,9 +61,13 @@
 .pc-card-wrapper.active::before {
   filter: contrast(1) saturate(2) blur(40px) opacity(1);
   transform: scale(0.9) translate3d(0, 0, 0.1px);
+  width: 400px;
 }
 
 .pc-card {
+  justify-self: flex-end;
+  margin-right: 80px;
+  width: 400px;
   height: 80svh;
   max-height: 540px;
   display: grid;

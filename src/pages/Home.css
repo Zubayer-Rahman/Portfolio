@@ -1,63 +1,86 @@
-.about, .skills, .looper, .timeline{
-    color: #dfdfdf;
-    background-color: #101010;
-    padding: 40px 0px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    position: relative;
-    padding: 40px 20px;
+.about,
+.skills,
+.looper,
+.timeline {
+  color: #dfdfdf;
+  background-color: #101010;
+  padding: 40px 0px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  padding: 40px 20px;
 }
 
-
-.info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title, .project-title h1{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-weight: bold;
-    color: #dfdfdf;
-    background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+.info h2,
+.skills h2,
+.looper h2,
+.timeline h2:first-child,
+.github-title,
+.project-title h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #dfdfdf;
+  background: linear-gradient(
+    90deg,
+    #40ffaa,
+    #4079ff,
+    #40ffaa,
+    #4079ff,
+    #40ffaa
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
-.skill-set, section{
-    width: 100%;
+.skill-set,
+section {
+  width: 100%;
 }
 
-.description{
+.description {
   font-size: 24px;
   margin-top: 10px;
   font-weight: 500;
   text-align: left;
 }
 
-.profile-description{
-  font-size: 24px;
+.profile-description {
+  font-size: 20px;
   margin-top: 10px;
   font-weight: 500;
-  text-align: center;
-  padding: 0px 200px;
+  text-align: left;
+  padding: 30px 50px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    max-width: 600px;
+  }
 }
 
-.navbar, nav {        
+.navbar,
+nav {
   position: sticky;
-  top: 10px; 
+  top: 10px;
   display: flex;
   justify-content: center;
   background: rgba(20, 20, 20, 0.3);
-  backdrop-filter: blur(12px); 
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.2rem 2rem;
   z-index: 1000;
@@ -85,7 +108,7 @@
 }
 
 .links::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -105,67 +128,89 @@
   color: #bcbcbc;
 }
 
-
-/* Tech Arsenal */
-.skill-container{
-max-width: 1280px;
-width: 100%;
+/* profile section */
+.profile-container {
+  overflow: hidden;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
 
-.expressjs, .prisma, .gsap, .motion{
+@media (max-width: 900px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tech Arsenal */
+.skill-container {
+  max-width: 1280px;
+  width: 100%;
+}
+
+.expressjs,
+.prisma,
+.gsap,
+.motion {
   background-color: #dfdfdf !important;
   border-radius: 5px !important;
   padding: 2px;
 }
-.nextjs{
+.nextjs {
   border: 1px solid #f6f6f6;
-  border-radius: 12px;  
+  border-radius: 12px;
 }
 
-.github{
+.github {
   background-color: #dfdfdf !important;
   border: 1px solid #f6f6f6;
-  border-radius: 12px;  
+  border-radius: 12px;
 }
 
-.front-end, .back-end, .database, .tools{
+.front-end,
+.back-end,
+.database,
+.tools {
   display: grid;
   grid-template-columns: 300px 1fr;
   margin-bottom: 4rem;
   align-items: flex-start;
 }
 
-.tech-container{
+.tech-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
   overflow: hidden;
 }
 
-.tech-container .tech-item{
+.tech-container .tech-item {
   display: flex;
   gap: 1rem;
 }
 
-.tech-container .tech-item img{
+.tech-container .tech-item img {
   width: 1.5rem;
   height: 1.5rem;
 }
 
 /* project showcase */
-.projectshowcase{
+.projectshowcase {
   display: grid;
   gap: 2rem;
   grid-template-columns: 900px 1fr;
 }
 
-
-
 @media (max-width: 769px) {
-  .info h2, .skills h2, .looper h2, .timeline h2:first-child, .github-title{
+  .info h2,
+  .skills h2,
+  .looper h2,
+  .timeline h2:first-child,
+  .github-title {
     font-size: 2.5rem;
   }
-  
+
   .navbar {
     width: 80%;
   }
@@ -178,11 +223,11 @@ width: 100%;
     font-size: 0.76rem;
   }
 
-  .description{
+  .description {
     font-size: 18px;
     line-height: normal;
   }
-  .profile-description{
+  .profile-description {
     padding: 20px;
     font-size: 18px;
   }
