@@ -20,7 +20,7 @@ const Home = () => {
           <h2>More about me!!</h2>
         </div>
 
-        <ScrollReveal className="profile-card">
+        <ScrollReveal className="profile-card" direction="left" delay={0.2}>
           <ProfileCard
             name="Zubayer Rahman"
             title="MERN Stack Dev"
@@ -34,7 +34,7 @@ const Home = () => {
             onContactClick={() => console.log("Contact clicked")}
           />
         </ScrollReveal>
-        <ScrollReveal className="profile-description">
+        <ScrollReveal className="profile-description" direction="right" delay={0.2}>
           <h2>
             Proficient MERN Stack Developer with extensive experience in MongoDB, Express.js, React.js, Node.js, along with
             HTML5, CSS3, JavaScript (ES6+), and responsive web design. Adept at building scalable, high-performance web
@@ -214,6 +214,8 @@ const Home = () => {
           token={process.env.REACT_APP_GITHUB_TOKEN}
         />
       </div> */}
+
+
       <div className="project-title">
         <h1>Featured Projects</h1>
       </div>  
@@ -227,7 +229,7 @@ const Home = () => {
           />
         </div>
         <div className="projects">
-          <h1>asdasdasd</h1>
+          
         </div>
       </div>
 
