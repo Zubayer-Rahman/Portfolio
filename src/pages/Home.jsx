@@ -219,19 +219,11 @@ const Home = () => {
 
 
       <div className="project-title">
-        <h1>Featured Projects</h1>
+        <h1>My Beloved Projects</h1>
       </div>
       <div className="projectshowcase">
-
-        <div className="scroll-velocity">
-          <ScrollVelocity
-            texts={['React . Javascript . Tailwind . SCSS . Git . Node.js .']}
-            velocity={50}
-            className="custom-scroll-text"
-          />
-        </div>
-        <div className="projects">
-
+        <div className="card-container">
+          
         </div>
       </div>
 
