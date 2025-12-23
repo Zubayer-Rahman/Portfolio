@@ -59,12 +59,9 @@ section {
 }
 
 .profile-description {
-  font-size: 20px;
-  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 18px;
   font-weight: 500;
-  text-align: left;
-  padding: 30px 50px;
-  padding-left: 0px;
   display: flex;
   align-items: center;
 
@@ -131,10 +128,20 @@ nav {
 /* profile section */
 .profile-container {
   overflow: hidden;
-  padding: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 600px 1fr;
   width: 100%;
+}
+
+.profile-image {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  justify-self: flex-end;
+}
+
+.profile-card{
+ flex: 1;
+ align-self: center;
 }
 
 @media (max-width: 900px) {
@@ -197,9 +204,7 @@ nav {
 
 /* project showcase */
 .projectshowcase {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 900px 1fr;
+
 }
 
 @media (max-width: 769px) {

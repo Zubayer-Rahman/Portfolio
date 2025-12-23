@@ -9,6 +9,8 @@ import ScrollTimeline from "../components/ScrollTimeline.jsx";
 import ScrollVelocity from "../components/ScrollVelocity.jsx"
 import FloatingMenu from "../components/Floating Widgets/floatingMenu.jsx";
 import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
+import ProfileImg from "../asset/Corporate-Headshot.png";
+
 
 const Home = () => {
   return (
@@ -22,7 +24,7 @@ const Home = () => {
 
         <div className="profile-container">
           <ScrollReveal className="profile-card" direction="left" delay={0.2}>
-            <ProfileCard
+            {/*<ProfileCard
               name="Zubayer Rahman"
               title="MERN Stack Dev"
               handle="zubayer"
@@ -33,7 +35,9 @@ const Home = () => {
               enableTilt={true}
               enableMobileTilt={false}
               onContactClick={() => console.log("Contact clicked")}
-            />
+            />*/}
+
+            <img src={ProfileImg} alt="Zubayer Rahman" className="profile-image" />
           </ScrollReveal>
           <ScrollReveal className="profile-description" direction="right" delay={0.2}>
             <h2>
