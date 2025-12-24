@@ -11,7 +11,7 @@ const Banner = () => {
           mouseRepulsion={true}
           mouseInteraction={true}
           density={1.5}
-          glowIntensity={0.7}
+          glowIntensity={0.7} 
           saturation={0.8}
           hueShift={1500}
         />
