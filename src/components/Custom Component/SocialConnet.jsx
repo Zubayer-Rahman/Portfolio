@@ -18,16 +18,6 @@ const SocialConnet = () => {
             </a>
             <a href="/">
                 <img src={mailLogo} alt="Mail" className="social-icon" />
-                <img src={githubLogo} alt="GitHub" className="social-icon" />
-            </a>
-            <a href="/">
-                <img src={linkedinLogo} alt="LinkedIn" className="social-icon" />
-            </a>
-            <a href="/">
-                <img src={instagramLogo} alt="Instagram" className="social-icon" />
-            </a>
-            <a href="/">
-                <img src={mailLogo} alt="Mail" className="social-icon" />
             </a>
         </div>
     )
