@@ -1,15 +1,11 @@
-import React from "react";
 import "./Home.css";
 import Banner from "../components/Banner.jsx";
-import ProfileCard from "../components/ProfileCard.jsx";
-import avatarImage from "../asset/zubayer.png";
 import framerMotion from "../asset/framer-motion.svg"
 import gsap from "../asset/gsap.png";
 import ScrollTimeline from "../components/ScrollTimeline.jsx";
-import ScrollVelocity from "../components/ScrollVelocity.jsx"
-import FloatingMenu from "../components/Floating Widgets/floatingMenu.jsx";
 import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 import ProfileImg from "../asset/Corporate-Headshot.png";
+import SocialConnet from "../components/Custom Component/SocialConnet.jsx";
 
 
 const Home = () => {
@@ -41,14 +37,14 @@ const Home = () => {
           </ScrollReveal>
           <ScrollReveal className="profile-description" direction="right" delay={0.2}>
             <h2>
-              Proficient MERN Stack Developer with extensive experience in MongoDB, Express.js, React.js, Node.js, along with
-              HTML5, CSS3, JavaScript (ES6+), and responsive web design. Adept at building scalable, high-performance web
-              applications with seamless front-end and back-end integration. Skilled in RESTful API development and database
-              design. Proficient in cross-browser compatibility, performance optimization, and CSS frameworks like Bootstrap and
-              Tailwind CSS. Strong background in version control (Git/GitHub), Agile methodologies, UI/UX design feasibility, and
-              delivering quality solutions in fast-paced environments. Committed to continuous learning, writing clean maintainable
-              code, and staying current with evolving industry trends and technologies.
+              MERN Stack Developer | Building scalable web apps with MongoDB, Express, React & Node.js. Focused on responsive design, RESTful APIs,and pixel-perfect UI using Tailwind & Bootstrap.Clean code advocate | Agile practitioner | Lifelong learner.
             </h2>
+
+            <h3>Proficient in cross-browser compatibility, performance optimization, and CSS frameworks like Bootstrap and Tailwind CSS. Strong background in version control (Git/GitHub), Agile methodologies,UI/UX design feasibility, and delivering quality solutions in fast-paced environments.</h3>
+
+            <div>
+              <SocialConnet />
+            </div>
           </ScrollReveal>
         </div>
       </div>
@@ -227,7 +223,7 @@ const Home = () => {
       </div>
       <div className="projectshowcase">
         <div className="card-container">
-          
+
         </div>
       </div>
 

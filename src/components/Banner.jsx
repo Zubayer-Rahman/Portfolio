@@ -19,7 +19,7 @@ const Banner = () => {
 
       <ScrollReveal className="banner-content">
         <h1>
-          Hello! I am <span>Zubayer Rahman</span>
+          Hi, I'm <span>Zubayer</span>
         </h1>
 
         <p className='designation'>
