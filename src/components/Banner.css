@@ -127,4 +127,24 @@
   .banner-content {
     padding: 15px;
   }
+
+  .banner-content h1 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 3.3rem;
+  }
+
+  .banner-content h1 span {
+    font-size: 4rem;
+  }
+
+  .banner-content .designation {
+    font-size: 1rem;
+  }
+
+  .banner-content button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 2rem;
+  }
 }
