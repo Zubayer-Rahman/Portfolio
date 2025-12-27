@@ -51,8 +51,7 @@
   width: 5px;
   border-radius: 9999px;
   background: linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7);
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5),
-    0 0 25px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5), 0 0 25px rgba(168, 85, 247, 0.3);
   z-index: 11;
 }
 
@@ -74,8 +73,7 @@
     rgba(34, 211, 238, 0) 70%
   );
   box-shadow: 0 0 15px 4px rgba(168, 85, 247, 0.6),
-    0 0 25px 8px rgba(99, 102, 241, 0.4),
-    0 0 40px 15px rgba(34, 211, 238, 0.2);
+    0 0 25px 8px rgba(99, 102, 241, 0.4), 0 0 40px 15px rgba(34, 211, 238, 0.2);
 }
 
 .timeline-events {
@@ -175,9 +173,25 @@
   margin-right: 0.5rem;
 }
 
-
-@media (width: 768px) {
-  .timeline-header h2{
+@media (max-width: 768px) {
+  .timeline{
+    padding: 0 1rem 4rem;
+  }
+  .timeline-header h2 {
     font-size: 1.5rem;
   }
+  .timeline-wrapper {
+    padding: 0;
+  }
+  .timeline-card-content .description {
+    font-size: 14px;
+  }
+  .timeline-card-content h3{
+    font-size: 1.5rem;
+    line-height: normal;
+  }
+  .timeline-card-content .subtitle {
+    font-size: 1.1rem;
+  }
+
 }
