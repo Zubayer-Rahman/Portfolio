@@ -6,6 +6,7 @@ import ScrollTimeline from "../components/ScrollTimeline.jsx";
 import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 import ProfileImg from "../asset/Corporate-Headshot.png";
 import SocialConnet from "../components/Custom Component/SocialConnet.jsx";
+import ResumeButtons from "../components/Custom Component/DownloadBtn.jsx";
 
 
 const Home = () => {
@@ -44,6 +45,10 @@ const Home = () => {
 
             <div>
               <SocialConnet />
+            </div>
+
+            <div>
+                <ResumeButtons /> 
             </div>
           </ScrollReveal>
         </div>
