@@ -250,6 +250,24 @@ nav {
       font-size: 14px;
     }
   }
+
+  .skill-container .title{
+    text-align: left;
+  }
+  .tech-container .tech-item p{
+    font-size: 14px;
+  }
+  .front-end, .back-end, .database, .tools {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .tech-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-title h1{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
