@@ -5,8 +5,8 @@ export default function ResumeButtons() {
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = '/path-to-your-resume.pdf';
-        link.download = 'YourName_Resume.pdf';
+        link.href = '../../asset/Zubayer_Resume.pdf';
+        link.download = 'Zubayer-Rahman.pdf';
         link.click();
         setTimeout(() => setDownloaded(null), 2000);
     };
