@@ -46,10 +46,6 @@ const Home = () => {
             <div>
               <SocialConnet />
             </div>
-
-            {/* <div>
-                <ResumeButtons /> 
-            </div> */}
             
           </ScrollReveal>
         </div>
