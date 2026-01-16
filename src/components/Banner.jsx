@@ -16,7 +16,7 @@ const Banner = () => {
           hueShift={1500}
         />
       </div>
-
+      
       <ScrollReveal className="banner-content">
         <h1>
           Hi, I'm <span>Zubayer Rahman</span>

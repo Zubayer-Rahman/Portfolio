@@ -264,7 +264,6 @@ nav {
   .tech-container {
     grid-template-columns: 1fr 1fr;
   }
-
   .project-title h1{
     font-size: 2rem;
   }

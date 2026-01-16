@@ -7,6 +7,7 @@ import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 import ProfileImg from "../asset/Corporate-Headshot.png";
 import SocialConnet from "../components/Custom Component/SocialConnet.jsx";
 import ResumeButtons from "../components/Custom Component/DownloadBtn.jsx";
+import ProjectCard from "../components/Custom Component/ProjectCard.jsx";
 
 
 const Home = () => {
@@ -225,7 +226,14 @@ const Home = () => {
       </div>
       <div className="projectshowcase">
         <div className="card-container">
-
+          <ProjectCard 
+            projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
+            projectTitle="E-Commerce Website"
+            projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
+            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectTags={["React", "Node.js", "MongoDB"]}
+            skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
+          />
         </div>
       </div>
 
