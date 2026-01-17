@@ -228,7 +228,7 @@ const Home = () => {
         <div className="card-container">
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
-            projectTitle="E-Commerce Website"
+            projectTitle="Job Portal Dashboard"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
             projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
             projectTags={["React", "Node.js", "MongoDB"]}
@@ -237,7 +237,7 @@ const Home = () => {
 
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
-            projectTitle="E-Commerce Website"
+            projectTitle="KhudaLagse"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
             projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
             projectTags={["React", "Node.js", "MongoDB"]}
@@ -246,7 +246,7 @@ const Home = () => {
 
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
-            projectTitle="E-Commerce Website"
+            projectTitle="AI Resumer Cheker"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
             projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
             projectTags={["React", "Node.js", "MongoDB"]}
@@ -255,7 +255,7 @@ const Home = () => {
 
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
-            projectTitle="E-Commerce Website"
+            projectTitle="Real-Time Chat Application"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
             projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
             projectTags={["React", "Node.js", "MongoDB"]}
@@ -264,7 +264,16 @@ const Home = () => {
 
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
-            projectTitle="E-Commerce Website"
+            projectTitle="Fitness Tracker Mobile App"
+            projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
+            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectTags={["React", "Node.js", "MongoDB"]}
+            skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
+          />
+
+          <ProjectCard 
+            projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
+            projectTitle="FURNIO - E-Commerce Website"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
             projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
             projectTags={["React", "Node.js", "MongoDB"]}

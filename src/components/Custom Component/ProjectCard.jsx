@@ -15,20 +15,12 @@ const ProjectCard = ({
                 <div className='project-card-content'>
                     <h3>{projectTitle}</h3>
                     <p>{projectDescription}</p>
-                    <a href={projectLink} target="_blank" rel="noopener noreferrer">View Project</a>
                     <div className="tags">
                         {projectTags.map((tag, index) => (
                             <span key={index}>{tag}</span>
                         ))}
                     </div>
-                    <div className="skills">
-                        <h4>Skills Used:</h4>
-                        <ul>
-                            {skillsUsed.map((skill, index) => (
-                                <li key={index}>{skill}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    <a href={projectLink} target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
             </div>
         </>
