@@ -128,10 +128,11 @@ nav {
 }
 
 /* profile section */
-.profile-container {
+.card-container {
   overflow: hidden;
   display: grid;
-  grid-template-columns: 800px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
   width: 100%;
 }
 
@@ -211,10 +212,10 @@ nav {
   height: 1.5rem;
 }
 
-/* project showcase */
-/* .projectshowcase {
-
-} */
+project showcase */
+.projectshowcase {
+  display: flex;
+}
 
 @media (max-width: 769px) {
   .info h2,
