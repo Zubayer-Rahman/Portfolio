@@ -26,7 +26,7 @@ const Banner = () => {
           MERN Stack Developer
         </p>
 
-        <button>Projects</button>
+        <button onClick={() => window.location.href = "#projectshowcase"}>Projects</button>
       </ScrollReveal>
     </div>
   )

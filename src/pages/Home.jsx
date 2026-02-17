@@ -8,6 +8,8 @@ import ProfileImg from "../asset/Corporate-Headshot.png";
 import SocialConnet from "../components/Custom Component/SocialConnet.jsx";
 import ProjectCard from "../components/Custom Component/ProjectCard.jsx";
 
+import JobPortal from "../asset/job_portal.png";
+
 
 const Home = () => {
   return (
@@ -224,12 +226,12 @@ const Home = () => {
         <h1>My Beloved Projects</h1>
       </div>
       <div className="projectshowcase">
-        <div className="card-container">
+        <div className="card-container" id="projectshowcase">
           <ProjectCard 
-            projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
+            projectImage={JobPortal}
             projectTitle="Job Portal Dashboard"
-            projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectDescription="A full-featured job portal dashboard with user authentication, job listings, application tracking, and admin management."
+            projectLink="https://github.com/Zubayer-Rahman/Job-Portal-Dashboard"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
