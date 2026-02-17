@@ -130,10 +130,17 @@ nav {
 /* profile section */
 .profile-container {
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 750px 1fr;
+  display: flex;
+  align-items: anchor-center;
+  justify-content: center;
   gap: 20px;
   width: 100%;
+}
+
+@media screen and (max-width: 1090px) {
+  .profile-container {
+    flex-direction: column;
+  }
 }
 
 .profile-image {
@@ -149,10 +156,10 @@ nav {
   transition: filter 0.5s;
 }
 
-.profile-card {
+/* .profile-card {
   flex: 1;
   align-self: center;
-}
+} */
 
 @media (max-width: 900px) {
   .profile-container {
@@ -211,7 +218,7 @@ nav {
   width: 1.5rem;
   height: 1.5rem;
 }
- 
+
 /* project showcase */
 .card-container {
   padding: 40px;
@@ -255,21 +262,30 @@ nav {
     }
   }
 
-  .skill-container .title{
+  .skill-container .title {
     text-align: left;
   }
-  .tech-container .tech-item p{
+  .tech-container .tech-item p {
     font-size: 14px;
   }
-  .front-end, .back-end, .database, .tools {
+  .front-end,
+  .back-end,
+  .database,
+  .tools {
     grid-template-columns: 1fr;
     gap: 10px;
   }
   .tech-container {
     grid-template-columns: 1fr 1fr;
   }
-  .project-title h1{
+  .project-title h1 {
     font-size: 2rem;
+  }
+
+  /*projects-showcase*/
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 }
 
