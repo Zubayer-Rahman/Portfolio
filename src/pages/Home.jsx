@@ -23,18 +23,6 @@ const Home = () => {
 
         <div className="profile-container">
           <ScrollReveal className="profile-card" direction="left" delay={0.2}>
-            {/*<ProfileCard
-              name="Zubayer Rahman"
-              title="MERN Stack Dev"
-              handle="zubayer"
-              status="Dotlines Bangladesh"
-              contactText="Contact Me"
-              avatarUrl={avatarImage}
-              showUserInfo={true}
-              enableTilt={true}
-              enableMobileTilt={false}
-              onContactClick={() => console.log("Contact clicked")}
-            />*/}
 
             <img src={ProfileImg} alt="Zubayer Rahman" className="profile-image" />
           </ScrollReveal>
@@ -52,18 +40,6 @@ const Home = () => {
           </ScrollReveal>
         </div>
       </div>
-
-      {/* <div className="skills">
-        <h2 >What do i Know?</h2>
-        <div className="skill-set">
-          <ScrollVelocity
-            texts={['React . Javascript . Tailwind . SCSS . Git . Node.js .']} 
-            velocity={50} 
-            className="custom-scroll-text"
-          />
-        </div>
-      </div> */}
-
 
       <div className="timeline">
         <ScrollTimeline />
@@ -212,16 +188,6 @@ const Home = () => {
         </div>
       </div>
 
-
-      {/* <div className="github-activity">
-        <h2 className="github-title">My GitHub Activity</h2>
-        <GitHubDashboard 
-          username="Zubayer-Rahman"
-          token={process.env.REACT_APP_GITHUB_TOKEN}
-        />
-      </div> */}
-
-
       <div className="project-title">
         <h1>My Beloved Projects</h1>
       </div>
@@ -240,7 +206,7 @@ const Home = () => {
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
             projectTitle="KhudaLagse"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectLink="https://github.com/Zubayer-Rahman/khaidai"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
@@ -249,7 +215,7 @@ const Home = () => {
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
             projectTitle="AI Resumer Cheker"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectLink="https://github.com/Zubayer-Rahman/AI-Resume-Tracker"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
@@ -257,8 +223,8 @@ const Home = () => {
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
             projectTitle="Real-Time Chat Application"
-            projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectDescription="A full-featured real-time chat application with user authentication, message history, and group chat functionality."
+            projectLink="https://github.com/Zubayer-Rahman/Real-Time-Chat-App"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
@@ -266,8 +232,8 @@ const Home = () => {
           <ProjectCard 
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
             projectTitle="Fitness Tracker Mobile App"
-            projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectDescription="A full-featured fitness tracking mobile application with workout logging, progress tracking, and health metrics."
+            projectLink="https://github.com/Zubayer-Rahman/Fitness-Tracker-App"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
@@ -276,7 +242,7 @@ const Home = () => {
             projectImage="https://i.ibb.co/0jvYV7D/e-commerce.png"
             projectTitle="FURNIO - E-Commerce Website"
             projectDescription="A full-featured e-commerce website with user authentication, product listings, shopping cart, and payment integration."
-            projectLink="https://github.com/Zubayer-Rahman/E-Commerce-Website"
+            projectLink="https://github.com/Zubayer-Rahman/fullstack-furnio"
             projectTags={["React", "Node.js", "MongoDB"]}
             skillsUsed={["JavaScript", "React", "Node.js", "MongoDB"]}
           />
