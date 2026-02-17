@@ -1,5 +1,5 @@
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 
 const ScrollReveal = ({
     children,
@@ -16,23 +16,23 @@ const ScrollReveal = ({
     const controls = useAnimation();
 
     // Direction offsets
-    const directions = {
+    const directions = useMemo(() => ({
         up: { y: distance, x: 0 },
         down: { y: -distance, x: 0 },
         left: { x: -distance, y: 0 },
         right: { x: distance, y: 0 }
-    };
+    }), [distance]);
 
-    const hiddenState = {
+    const hiddenState = useMemo(() => ({
         opacity: 0,
         ...directions[direction]
-    };
+    }), [direction, directions]); 
 
-    const visibleState = {
+    const visibleState = useMemo(() => ({
         opacity: 1,
         x: 0,
         y: 0
-    };
+    }), []);
 
     useEffect(() => {
         if (isInView) {
@@ -40,7 +40,7 @@ const ScrollReveal = ({
         } else {
             controls.start(hiddenState);
         }
-    }, [isInView, controls]);
+    }, [isInView, controls, hiddenState, visibleState]);
 
     return (
         <motion.div

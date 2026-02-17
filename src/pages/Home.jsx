@@ -6,7 +6,6 @@ import ScrollTimeline from "../components/ScrollTimeline.jsx";
 import ScrollReveal from "../components/Scroll Reveal/scrollReveal.jsx";
 import ProfileImg from "../asset/Corporate-Headshot.png";
 import SocialConnet from "../components/Custom Component/SocialConnet.jsx";
-import ResumeButtons from "../components/Custom Component/DownloadBtn.jsx";
 import ProjectCard from "../components/Custom Component/ProjectCard.jsx";
 
 
