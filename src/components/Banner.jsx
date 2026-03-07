@@ -23,7 +23,7 @@ const Banner = () => {
         </h1>
 
         <p className='designation'>
-          MERN Stack Developer
+          Software Engineer | Artificial Intelligence Enthusiast 
         </p>
 
         <button onClick={() => window.location.href = "#projectshowcase"}>Projects</button>

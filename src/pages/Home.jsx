@@ -10,6 +10,8 @@ import ProjectCard from "../components/Custom Component/ProjectCard.jsx";
 
 import JobPortal from "../asset/job_portal.png";
 
+import ContributionGraph from "../components/Custom Component/Github.jsx";
+
 
 const Home = () => {
   return (
@@ -28,7 +30,7 @@ const Home = () => {
           </ScrollReveal>
           <ScrollReveal className="profile-description" direction="right" delay={0.2}>
             <h2>
-              MERN Stack Developer | Building scalable web apps with MongoDB, Express, React & Node.js. Focused on responsive design, RESTful APIs,and pixel-perfect UI using Tailwind & Bootstrap.Clean code advocate | Agile practitioner | Lifelong learner.
+              Software Engineer | Building scalable web apps with MongoDB, Express, React & Node.js. Focused on responsive design, RESTful APIs,and pixel-perfect UI using Tailwind & Bootstrap.Clean code advocate | Agile practitioner | Lifelong learner.
             </h2>
 
             <h3>Proficient in cross-browser compatibility, performance optimization, and CSS frameworks like Bootstrap and Tailwind CSS. Strong background in version control (Git/GitHub), Agile methodologies,UI/UX design feasibility, and delivering quality solutions in fast-paced environments.</h3>
@@ -248,6 +250,18 @@ const Home = () => {
           />
         </div>
       </div>
+
+
+      {/* github contribution graph */}
+      <div className="space-y-6">
+      {/* Contribution Graph */}
+      <div className="max-w-lg rounded-lg border bg-background p-2">
+        <ContributionGraph
+          className="w-full"
+          year={2025}
+        />
+      </div>
+    </div>
 
       {/* <Footer /> */}
     </>

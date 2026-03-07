@@ -1,287 +1,293 @@
-import React, { useEffect, useState } from "react";
+"use client";
+import { motion, useReducedMotion } from "motion/react";
+import { useMemo, useState } from "react";
 
-const GITHUB_GRAPHQL = "https://api.github.com/graphql";
+const WEEKS_IN_YEAR = 53;
+const DAYS_IN_WEEK = 7;
+const JANUARY_MONTH = 0;
+const DECEMBER_MONTH = 11;
+const SUNDAY_DAY = 0;
+const MIN_WEEKS_FOR_DECEMBER_HEADER = 2;
+const TOOLTIP_OFFSET_X = 10;
+const TOOLTIP_OFFSET_Y = 40;
 
-const GitHubDashboard = ({ username = "Zubayer-Rahman", token }) => {
-  const [stats, setStats] = useState({});
-  const [weeks, setWeeks] = useState([]);
-  const [repos, setRepos] = useState([]);
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [availableYears, setAvailableYears] = useState([]);
-  const [monthLabels, setMonthLabels] = useState([]);
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  useEffect(() => {
-    const query = `
-      {
-        user(login: "${username}") {
-          name
-          followers { totalCount }
-          repositories(privacy: PUBLIC) { totalCount }
-          contributionsCollection(from: "${year}-01-01T00:00:00Z", to: "${year}-12-31T23:59:59Z") {
-            contributionCalendar {
-              totalContributions
-              weeks {
-                contributionDays {
-                  date
-                  contributionCount
-                  color
-                }
-              }
-              months {
-                name
-                firstDay
-              }
-            }
-          }
-          pinnedItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on Repository {
-                name
-                description
-                stargazerCount
-                forkCount
-                url
-              }
-            }
-          }
-        }
-      }
-    `;
+const CONTRIBUTION_COLORS = [
+  "bg-primary",
+  "bg-brand/25",
+  "bg-brand/50",
+  "bg-brand/75",
+  "bg-brand",
+];
 
-    fetch(GITHUB_GRAPHQL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`, // Use your GitHub Personal Access Token
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const user = data.data.user;
+const LEVEL_0 = 0;
+const LEVEL_1 = 1;
+const LEVEL_2 = 2;
+const LEVEL_3 = 3;
+const LEVEL_4 = 4;
+const CONTRIBUTION_LEVELS = [LEVEL_0, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4];
 
-        // --- Stats ---
-        setStats({
-          followers: user.followers.totalCount,
-          repos: user.repositories.totalCount,
-          contributions:
-            user.contributionsCollection.contributionCalendar
-              .totalContributions,
-        });
+const DAY_1 = 1;
+const DAY_31 = 31;
 
-        // --- Weeks (structured grid) ---
-        setWeeks(user.contributionsCollection.contributionCalendar.weeks);
-
-        // --- Month Labels ---
-        setMonthLabels(
-          user.contributionsCollection.contributionCalendar.months
-        );
-
-        // --- Repositories ---
-        setRepos(user.pinnedItems.nodes);
-
-        // --- Available Years (from join year until now) ---
-        const currentYear = new Date().getFullYear();
-        const joinYear = 2019; // change to YOUR GitHub join year
-        const yearList = [];
-        for (let y = currentYear; y >= joinYear; y--) yearList.push(y);
-        setAvailableYears(yearList);
-      });
-  }, [username, token, year]);
-
-  // Official GitHub palette
-  const GITHUB_COLORS = [
-    "#151b23", // 0 contributions
-    "#033a16",
-    "#196c2e",
-    "#2ea043",
-    "#56d364", // max contributions
-  ];
-
-  return (
-    <section
-      style={{
-        padding: "2rem",
-        fontFamily: "sans-serif",
-        color: "#ddd",
-        background: "#101010",
-        borderRadius: "12px",
-        margin: "2rem 0",
-      }}
-    >
-      {/* --- Stats Row --- */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2rem",
-          margin: "1.5rem 0",
-        }}
-      >
-        <div>👥 Followers: {stats.followers}</div>
-        <div>📦 Public Repos: {stats.repos}</div>
-        <div>
-          🔥 {year} Contributions: {stats.contributions}
-        </div>
-      </div>
-
-      {/* --- Year Selector --- */}
-      <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-        {availableYears.map((y) => (
-          <button
-            key={y}
-            onClick={() => setYear(y)}
-            style={{
-              margin: "0 5px",
-              padding: "6px 12px",
-              borderRadius: "6px",
-              border: year === y ? "2px solid #30a14e" : "1px solid #444",
-              background: year === y ? "#238636" : "#161b22",
-              color: "#fff",
-              cursor: "pointer",
-              fontWeight: year === y ? "bold" : "normal",
-            }}
-          >
-            {y}
-          </button>
-        ))}
-      </div>
-
-      {/* --- Month Labels --- */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `30px repeat(${weeks.length}, 15px)`,
-          justifyContent: "center",
-          fontSize: "12px",
-          marginBottom: "6px",
-          color: "#aaa",
-        }}
-      >
-        {/* empty corner for weekday labels */}
-        {monthLabels.map((month) => (
-          <div key={month.name} style={{ gridColumn: "span 4" }}>
-            {month.name}
-          </div>
-        ))}
-      </div>
-
-      {/* --- Heatmap --- */}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* Weekday Labels */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateRows: "repeat(7, 15px)",
-            gridGap: "3px",
-            marginRight: "6px",
-            fontSize: "12px",
-            color: "#aaa",
-          }}
-        >
-          {["Mon", "Wed", "Fri"].map((d) => (
-            <div key={d} style={{ lineHeight: "15px" }}>
-              {d}
-            </div>
-          ))}
-        </div>
-
-        {/* Weeks (columns) */}
-        <div style={{ display: "flex", gap: "3px" }}>
-          {weeks.map((week, wi) => (
-            <div
-              key={wi}
-              style={{
-                display: "grid",
-                gridTemplateRows: "repeat(7, 15px)",
-                gridGap: "3px",
-              }}
-            >
-              {week.contributionDays.map((day, di) => {
-                // fallback if API returns null
-                let fill =
-                  (day.contributionCount === 0
-                    ? GITHUB_COLORS[0]
-                    : day.contributionCount < 5
-                    ? GITHUB_COLORS[1]
-                    : day.contributionCount < 8
-                    ? GITHUB_COLORS[2]
-                    : day.contributionCount < 10
-                    ? GITHUB_COLORS[3]
-                    : GITHUB_COLORS[4]);
-
-                return (
-                  <div
-                    key={di}
-                    title={`${day.date}: ${day.contributionCount} contributions`}
-                    style={{
-                      width: "15px",
-                      height: "15px",
-                      backgroundColor: fill,
-                      borderRadius: "3px",
-                      cursor: "pointer",
-                      transition: "transform 0.2s ease-in-out",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = "scale(1.2)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                    onClick={() =>
-                      window.open(
-                        `https://github.com/${username}?tab=overview&from=${day.date}&to=${day.date}`,
-                        "_blank"
-                      )
-                    }
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* --- Pinned Repositories --- */}
-      <h3 style={{ marginTop: "2rem" }}>📌 Pinned Projects</h3>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "1.5rem",
-          marginTop: "1rem",
-        }}
-      >
-        {repos.map((repo) => (
-          <a
-            key={repo.name}
-            href={repo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              background: "#161b22",
-              padding: "1rem",
-              borderRadius: "8px",
-              color: "inherit",
-              textDecoration: "none",
-              transition: "transform 0.2s",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.02)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "scale(1)")
-            }
-          >
-            <h4>
-              {repo.name} ⭐{repo.stargazerCount} 🍴{repo.forkCount}
-            </h4>
-            <p>{repo.description}</p>
-          </a>
-        ))}
-      </div>
-    </section>
-  );
+const isDateInValidRange = (currentDate, startDate, endDate, targetYear) => {
+  const isInRange = currentDate >= startDate && currentDate <= endDate;
+  const isPreviousYearDecember =
+    currentDate.getFullYear() === targetYear - 1 &&
+    currentDate.getMonth() === DECEMBER_MONTH;
+  const isNextYearJanuary =
+    currentDate.getFullYear() === targetYear + 1 &&
+    currentDate.getMonth() === JANUARY_MONTH;
+  return isInRange || isPreviousYearDecember || isNextYearJanuary;
 };
 
-export default GitHubDashboard;
+const createDayData = (currentDate, contributionData) => {
+  const dateString = currentDate.toISOString().split("T")[0];
+  const existingData = contributionData.find((d) => d.date === dateString);
+  return {
+    date: dateString,
+    count: existingData?.count ?? LEVEL_0,
+    level: existingData?.level ?? LEVEL_0,
+  };
+};
+
+const shouldShowMonthHeader = ({
+  currentYear,
+  targetYear,
+  currentMonth,
+  startDateDay,
+  weekCount,
+}) =>
+  currentYear === targetYear ||
+  (currentYear === targetYear - 1 &&
+    currentMonth === DECEMBER_MONTH &&
+    startDateDay !== SUNDAY_DAY &&
+    weekCount >= MIN_WEEKS_FOR_DECEMBER_HEADER);
+
+const calculateMonthHeaders = (targetYear) => {
+  const headers = [];
+  const startDate = new Date(targetYear, JANUARY_MONTH, DAY_1);
+  const firstSunday = new Date(startDate);
+  firstSunday.setDate(startDate.getDate() - startDate.getDay());
+
+  let currentMonth = -1;
+  let currentYear = -1;
+  let monthStartWeek = 0;
+  let weekCount = 0;
+
+  for (let weekNumber = 0; weekNumber < WEEKS_IN_YEAR; weekNumber++) {
+    const weekDate = new Date(firstSunday);
+    weekDate.setDate(firstSunday.getDate() + weekNumber * DAYS_IN_WEEK);
+    const monthKey = weekDate.getMonth();
+    const yearKey = weekDate.getFullYear();
+
+    if (monthKey !== currentMonth || yearKey !== currentYear) {
+      if (
+        currentMonth !== -1 &&
+        shouldShowMonthHeader({
+          currentYear,
+          targetYear,
+          currentMonth,
+          startDateDay: startDate.getDay(),
+          weekCount,
+        })
+      ) {
+        headers.push({
+          month: MONTHS[currentMonth],
+          colspan: weekCount,
+          startWeek: monthStartWeek,
+        });
+      }
+      currentMonth = monthKey;
+      currentYear = yearKey;
+      monthStartWeek = weekNumber;
+      weekCount = 1;
+    } else {
+      weekCount++;
+    }
+  }
+
+  if (
+    currentMonth !== -1 &&
+    shouldShowMonthHeader({
+      currentYear,
+      targetYear,
+      currentMonth,
+      startDateDay: startDate.getDay(),
+      weekCount,
+    })
+  ) {
+    headers.push({
+      month: MONTHS[currentMonth],
+      colspan: weekCount,
+      startWeek: monthStartWeek,
+    });
+  }
+
+  return headers;
+};
+
+export function ContributionGraph({
+  data = [],
+  year = new Date().getFullYear(),
+  className = "",
+  showLegend = true,
+  showTooltips = true,
+}) {
+  const [hoveredDay, setHoveredDay] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const shouldReduceMotion = useReducedMotion();
+
+  const yearData = useMemo(() => {
+    const startDate = new Date(year, JANUARY_MONTH, DAY_1);
+    const endDate = new Date(year, DECEMBER_MONTH, DAY_31);
+    const days = [];
+
+    const firstSunday = new Date(startDate);
+    firstSunday.setDate(startDate.getDate() - startDate.getDay());
+
+    for (let weekNum = 0; weekNum < WEEKS_IN_YEAR; weekNum++) {
+      for (let day = 0; day < DAYS_IN_WEEK; day++) {
+        const currentDate = new Date(firstSunday);
+        currentDate.setDate(
+          firstSunday.getDate() + weekNum * DAYS_IN_WEEK + day
+        );
+
+        if (isDateInValidRange(currentDate, startDate, endDate, year)) {
+          days.push(createDayData(currentDate, data));
+        } else {
+          days.push({ date: "", count: LEVEL_0, level: LEVEL_0 });
+        }
+      }
+    }
+
+    return days;
+  }, [data, year]);
+
+  const monthHeaders = useMemo(() => calculateMonthHeaders(year), [year]);
+
+  const handleDayHover = (day, event) => {
+    if (showTooltips && day.date) {
+      setHoveredDay(day);
+      setTooltipPosition({ x: event.clientX, y: event.clientY });
+    }
+  };
+
+  const handleDayLeave = () => {
+    setHoveredDay(null);
+  };
+
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  const getContributionText = (count) => {
+    if (count === LEVEL_0) return "No contributions";
+    if (count === LEVEL_1) return "1 contribution";
+    return `${count} contributions`;
+  };
+
+  return (
+    <div className={`relative ${className}`}>
+      <table className="border-separate border-spacing-0.75">
+        <caption className="sr-only">Contribution Graph for {year}</caption>
+        <thead>
+          <tr>
+            <th aria-hidden="true" />
+            {monthHeaders.map((header) => (
+              <th
+                key={`${header.month}-${header.startWeek}`}
+                colSpan={header.colspan}
+                className="text-left text-xs font-normal text-muted-foreground pb-1"
+              >
+                {header.month}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from({ length: DAYS_IN_WEEK }, (_, dayIndex) => (
+            <tr key={DAYS[dayIndex]}>
+              <td className="pr-2 text-xs text-muted-foreground w-8">
+                {dayIndex % 2 === 0 && (
+                  <span aria-label={DAYS[dayIndex]}>{DAYS[dayIndex]}</span>
+                )}
+              </td>
+              {Array.from({ length: WEEKS_IN_YEAR }, (_, w) => {
+                const dayData = yearData[w * DAYS_IN_WEEK + dayIndex];
+                const cellKey = `${dayData?.date ?? "empty"}-${w}-${dayIndex}`;
+
+                if (!dayData?.date) {
+                  return <td key={cellKey} className="w-2.5 h-2.5" />;
+                }
+
+                return (
+                  <td
+                    key={cellKey}
+                    onMouseEnter={(e) => handleDayHover(dayData, e)}
+                    onMouseLeave={handleDayLeave}
+                    title={
+                      showTooltips
+                        ? `${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`
+                        : undefined
+                    }
+                  >
+                    <motion.div
+                      className={`w-2.5 h-2.5 rounded-sm cursor-pointer ${CONTRIBUTION_COLORS[dayData.level]}`}
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      whileHover={
+                        !shouldReduceMotion ? { scale: 1.5, zIndex: 10 } : {}
+                      }
+                      transition={{ duration: 0.1 }}
+                    />
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {showTooltips && hoveredDay && (
+        <div
+          className="fixed z-50 pointer-events-none bg-popover text-popover-foreground text-xs rounded shadow-md px-2 py-1 border"
+          style={{
+            left: tooltipPosition.x + TOOLTIP_OFFSET_X,
+            top: tooltipPosition.y - TOOLTIP_OFFSET_Y,
+          }}
+        >
+          <div className="font-semibold">{getContributionText(hoveredDay.count)}</div>
+          <div className="text-muted-foreground">{formatDate(hoveredDay.date)}</div>
+        </div>
+      )}
+
+      {showLegend && (
+        <div className="flex items-center gap-1 justify-end mt-2 text-xs text-muted-foreground">
+          <span>Less</span>
+          {CONTRIBUTION_LEVELS.map((level) => (
+            <div
+              key={level}
+              className={`w-2.5 h-2.5 rounded-sm ${CONTRIBUTION_COLORS[level]}`}
+            />
+          ))}
+          <span>More</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ContributionGraph;
